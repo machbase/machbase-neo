@@ -32,6 +32,8 @@ theme: just-the-docs
 remote_theme: just-the-docs/just-the-docs@v0.4.0.rc3
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-default-layout
 
 permalink: pretty
 
@@ -167,9 +169,6 @@ callouts:
 #
 # ga_tracking: UA-2709176-10
 # ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true/nil by default)
-
-plugins:
-  - jekyll-seo-tag
 
 kramdown:
   syntax_highlighter_opts:
