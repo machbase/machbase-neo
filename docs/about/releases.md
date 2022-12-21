@@ -2,13 +2,13 @@
 layout: page
 title: Releases
 permalink: /releases/
-order: 2
+nav_order: 2
 parent: Welcome to machbase
 ---
 
 # Machbase Neo v0.0.1
 
-This is pre-release packages that is not officially supproted yet.
+This is pre-release package that is not officially supproted.
 
 | OS         | Architecture   |  Download |
 |:-----------|:---------------|:----------|
