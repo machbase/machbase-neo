@@ -33,6 +33,7 @@ remote_theme: just-the-docs/just-the-docs@v0.4.0.rc3
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-tabs
   - jekyll-default-layout
 
 permalink: pretty
