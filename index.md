@@ -7,9 +7,9 @@ has_children: true
 has_toc: false
 ---
 
-# Machbase Documentation
+# Machbase Neo
 
-This repository is for the **Machbase Neo** documentation published at [machbase.github.io/machbase](https://machbase.github.io/machbase)
+Documents for users and developers of Machbase Neo
 
 ## What is Machbase Neo
 

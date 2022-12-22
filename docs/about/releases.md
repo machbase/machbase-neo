@@ -12,7 +12,7 @@ This is pre-release package that is not officially supproted.
 
 | OS         | Architecture   |  Download |
 |:-----------|:---------------|:----------|
-| Linux      | amd64          | [machsvr-v0.0.1-linux-amd64.zip](https://github.com/MACHBASE/machbase/releases/download/untagged-4f52c71ee5b244efa4c2/machsvr-v0.0.1-linux-amd64.zip)         |
-| Linux      | arm64          | [machsvr-v0.0.1-linux-arm64.zip](https://github.com/MACHBASE/machbase/releases/download/untagged-4f52c71ee5b244efa4c2/machsvr-v0.0.1-linux-arm64.zip)        |
+| Linux      | amd64          | [machbase-neo-v0.0.1-linux-amd64.zip](https://github.com/MACHBASE/machbase/releases/download/v0.0.1/machbase-neo-v0.0.1-linux-amd64.zip) |
+| Linux      | arm64          | [machbase-neo-v0.0.1-linux-arm64.zip](https://github.com/MACHBASE/machbase/releases/download/v0.0.1/machbase-neo-v0.0.1-linux-arm64.zip) |
 | macOS      | Apple Silicon  |          |
 | Windows 10 | amd64          |          |
