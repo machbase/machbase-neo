@@ -9,8 +9,8 @@ has_toc: false
 
 # Machbase Neo
 
-✓ Easy installation - download and run<br/>
-✓ Easy to learn - standard SQL and same concept of Tables, Columns with RDBMS
+✓ Easy installation - download and run <br/>
+✓ Easy to learn - standard SQL and same concept of Tables, Columns with RDBMS <br/>
 ✓ Easy to write and query via **HTTP**, **MQTT** and **gRPC** <br/>
 
 <span class="fs-7">
