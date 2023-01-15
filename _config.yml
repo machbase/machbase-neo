@@ -24,12 +24,14 @@ description: >- # this means to ignore newlines until "baseurl:"
   Machbase releases and documations.
 baseurl: "/machbase" # the subpath of your site, e.g. /blog
 url: "https://machbase.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+twitter_username: machbase
+github_username: machbase
+
+latest_version: v0.0.3
 
 # Build settings
 #theme: just-the-docs
-remote_theme: just-the-docs/just-the-docs@v0.4.0.rc3
+remote_theme: just-the-docs/just-the-docs@v0.4.0.rc4
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -134,7 +136,8 @@ footer_content: "Copyright &copy; machbase.com"
 last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
 last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
 
-
+# For copy button on code
+enable_copy_code_button: true
 
 # Footer "Edit this page on GitHub" link text
 gh_edit_link: true # show or hide edit this page link
