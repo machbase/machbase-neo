@@ -217,7 +217,11 @@ GEM
     minitest (5.16.3)
     nokogiri (1.13.10-arm64-darwin)
       racc (~> 1.4)
+<<<<<<< HEAD
     nokogiri (1.13.10-x86_64-linux)
+=======
+    nokogiri (1.13.10-x86_64-darwin)
+>>>>>>> origin/main
       racc (~> 1.4)
     octokit (4.25.1)
       faraday (>= 1, < 3)
@@ -261,7 +265,11 @@ GEM
 
 PLATFORMS
   arm64-darwin-22
+<<<<<<< HEAD
   x86_64-linux
+=======
+  x86_64-darwin-22
+>>>>>>> origin/main
 
 DEPENDENCIES
   github-pages
@@ -275,4 +283,4 @@ DEPENDENCIES
   webrick (~> 1.7)
 
 BUNDLED WITH
-   2.3.26
+   2.4.3

@@ -6,13 +6,19 @@ nav_order: 2
 parent: Welcome to machbase
 ---
 
-# Machbase Neo v0.0.2
+# Releases
 
-This is pre-release package that is not officially supproted.
+## Latest version {{ site.latest_version }}
+
+This is pre-release packages that are not officially supproted.
 
 | OS         | Architecture   |  Download |
 |:-----------|:---------------|:----------|
-| Linux      | amd64          | [machbase-neo-v0.0.2-linux-amd64.zip](https://github.com/MACHBASE/machbase/files/10349364/machbase-neo-v0.0.2-linux-amd64.zip) |
-| Linux      | arm64          | [machbase-neo-v0.0.2-linux-arm64.zip](https://github.com/MACHBASE/machbase/files/10349365/machbase-neo-v0.0.2-linux-arm64.zip) |
-| macOS      | Apple Silicon  |          |
-| Windows 10 | amd64          |          |
+| Linux      | arm64          | [machbase-neo-{{ site.latest_version }}-linux-arm64.zip](https://github.com/machbase/machbase/releases/download/{{ site.latest_version }}/machbase-neo-{{ site.latest_version }}-linux-arm64.zip) |
+| Linux      | x64            | [machbase-neo-{{ site.latest_version }}-linux-amd64.zip](https://github.com/machbase/machbase/releases/download/{{ site.latest_version }}/machbase-neo-{{ site.latest_version }}-linux-amd64.zip) |
+| macOS      | x64            |          |
+| Windows    | x64            |          |
+
+## Previous releases
+
+Find previously released versions in [here](https://github.com/machbase/machbase/releases).
