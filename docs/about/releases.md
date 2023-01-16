@@ -19,6 +19,6 @@ This is pre-release packages that are not officially supproted.
 | macOS      | x64            |          |
 | Windows    | x64            |          |
 
-## Previous versions
+## Previous releases
 
 Find previously released versions in [here](https://github.com/machbase/machbase/releases).
