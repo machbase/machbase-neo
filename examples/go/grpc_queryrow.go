@@ -8,8 +8,6 @@ import (
 )
 
 func grpc_queryrow() {
-	fmt.Println("grpc_queryrow")
-
 	opts := []machrpc.ClientOption{
 		machrpc.QueryTimeout(5 * time.Second),
 	}
