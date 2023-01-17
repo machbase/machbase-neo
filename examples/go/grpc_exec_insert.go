@@ -6,7 +6,7 @@ import (
 	"github.com/machbase/neo-grpc/machrpc"
 )
 
-func grpc_exec_cretable() {
+func grpc_exec_insert() {
 	opts := []machrpc.ClientOption{
 		machrpc.QueryTimeout(5 * time.Second),
 	}
@@ -17,12 +17,8 @@ func grpc_exec_cretable() {
 	}
 	defer cli.Disconnect()
 
-	sqlText := `create tag table example (
-		name varchar(100) primary key, 
-		time datetime basetime, 
-		value double
-	)`
-	if err := cli.Exec(sqlText); err != nil {
+	sqlText := `insert into example (name, time, value)  values (?, ?, ?)`
+	if err := cli.Exec(sqlText, "n1", time.Now(), 1.234); err != nil {
 		panic(err)
 	}
 }

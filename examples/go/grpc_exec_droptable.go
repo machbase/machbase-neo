@@ -1,15 +1,12 @@
 package main
 
 import (
-	"fmt"
 	"time"
 
 	"github.com/machbase/neo-grpc/machrpc"
 )
 
-func main() {
-	fmt.Println("exec example")
-
+func grpc_exec_droptable() {
 	opts := []machrpc.ClientOption{
 		machrpc.QueryTimeout(5 * time.Second),
 	}
