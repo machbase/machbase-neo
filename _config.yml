@@ -28,6 +28,7 @@ twitter_username: machbase
 github_username: machbase
 
 latest_version: v0.0.4
+examples_url: https://github.com/machbase/machbase/examples
 
 # Build settings
 #theme: just-the-docs
@@ -61,6 +62,10 @@ exclude:
    - package-lock.json
    - Rakefile
    - README.md
+# examples
+   - examples/
+   - go.mod
+   - go.sum
 
 # Set a path/url to a logo that will be displayed instead of the title
 #logo: "/assets/images/just-the-docs.png"
