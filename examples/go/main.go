@@ -20,6 +20,8 @@ func main() {
 		"grpc_exec_droptable": grpc_exec_droptable,
 		"grpc_exec_insert":    grpc_exec_insert,
 		"grpc_queryrow":       grpc_queryrow,
+		"grpc_query":          grpc_query,
+		"grpc_append":         grpc_append,
 	}
 
 	if fn, ok := examples[ex]; ok {
