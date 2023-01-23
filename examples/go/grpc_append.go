@@ -19,23 +19,18 @@ func grpc_append() {
 	defer cli.Disconnect()
 
 	tableName := "example"
-	data := [][3]any{}
-	for i := 0; i < 100; i++ {
-		datum := [3]any{}
-		datum[0] = fmt.Sprintf("tag-%d", i) // name
-		datum[1] = time.Now()               // time
-		datum[2] = 1.0001 * float64(i+1)    // value
-		data = append(data, datum)
-	}
-
 	appender, err := cli.Appender(tableName)
 	if err != nil {
 		panic(err)
 	}
 	defer appender.Close()
 
-	for _, datum := range data {
-		fmt.Println("append", datum)
+	ts := time.Now()
+	for i := 0; i < 100; i++ {
+		datum := [3]any{}
+		datum[0] = "go-append-ex"           // name
+		datum[1] = ts.Add(time.Duration(i)) // time
+		datum[2] = 1.0001 * float64(i+1)    // value
 		err := appender.Append(datum[:]...)
 		if err != nil {
 			panic(err)

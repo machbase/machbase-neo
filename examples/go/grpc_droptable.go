@@ -6,7 +6,7 @@ import (
 	"github.com/machbase/neo-grpc/machrpc"
 )
 
-func grpc_exec_insert() {
+func grpc_droptable() {
 	opts := []machrpc.ClientOption{
 		machrpc.QueryTimeout(5 * time.Second),
 	}
@@ -17,8 +17,8 @@ func grpc_exec_insert() {
 	}
 	defer cli.Disconnect()
 
-	sqlText := `insert into example (name, time, value)  values (?, ?, ?)`
-	if err := cli.Exec(sqlText, "n1", time.Now(), 1.234); err != nil {
+	sqlText := `drop table example`
+	if err := cli.Exec(sqlText); err != nil {
 		panic(err)
 	}
 }

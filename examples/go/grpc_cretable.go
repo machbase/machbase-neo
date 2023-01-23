@@ -6,7 +6,7 @@ import (
 	"github.com/machbase/neo-grpc/machrpc"
 )
 
-func grpc_exec_droptable() {
+func grpc_cretable() {
 	opts := []machrpc.ClientOption{
 		machrpc.QueryTimeout(5 * time.Second),
 	}
@@ -17,7 +17,11 @@ func grpc_exec_droptable() {
 	}
 	defer cli.Disconnect()
 
-	sqlText := `drop table example`
+	sqlText := `create tag table example (
+		name varchar(100) primary key, 
+		time datetime basetime, 
+		value double
+	)`
 	if err := cli.Exec(sqlText); err != nil {
 		panic(err)
 	}
