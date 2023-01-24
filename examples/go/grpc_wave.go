@@ -20,15 +20,10 @@ func grpc_wave() {
 
 	sqlText := `insert into example (name, time, value) values (?, ?, ?)`
 
-	period := float64(15000)
-	tick := 500
-
-	from := time.Now()
-	for ts := range time.Tick(time.Duration(tick) * time.Millisecond) {
-		delta := float64(int32(ts.Sub(from).Milliseconds()))
-		theta := 2 * math.Pi * math.Mod(delta, period) / period
-		sin := math.Sin(theta)
-		cos := math.Cos(theta)
+	for ts := range time.Tick(500 * time.Millisecond) {
+		delta := float64(ts.UnixMilli()%15000) / 15000
+		theta := 2 * math.Pi * delta
+		sin, cos := math.Sin(theta), math.Cos(theta)
 		if err := cli.Exec(sqlText, "wave.sin", ts, sin); err != nil {
 			panic(err)
 		}

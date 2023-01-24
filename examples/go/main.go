@@ -23,6 +23,7 @@ func main() {
 		"grpc_query":     grpc_query,
 		"grpc_append":    grpc_append,
 		"grpc_wave":      grpc_wave,
+		"http_wave":      http_wave,
 	}
 
 	if fn, ok := examples[ex]; ok {
