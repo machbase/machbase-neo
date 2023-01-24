@@ -7,8 +7,8 @@ import (
 
 /*
 ex)
-go run *.go grpc_exec_cretable
-go run *.go grpc_exec_droptable
+go run *.go grpc_cretable
+go run *.go grpc_droptable
 */
 func main() {
 	ex := ""
