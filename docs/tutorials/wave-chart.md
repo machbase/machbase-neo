@@ -100,3 +100,20 @@ machbase-neo shell chart --range 30s EXAMPLE/wave.sin#value EXAMPLE/wave.cos#val
 ```
 
 ![img](chart01.jpg)
+
+It is also possible browsing data with "walk" command of shell like below.
+
+```sh
+machbase-neo shell walk "select * from EXAMPLE order by time desc"
+```
+
+![img](chart02.jpg)
+
+{: .note }
+
+> Use shell command with `--tz` option to display time in a time-zone other than 'UTC'. 
+> This option accepts 'UTC', 'local' and tz database format (eg: 'Europe/Paris')
+> 
+> `machbase-neo shell --tz=local walk select...`
+>
+> `machbase-neo shell --tz=America/Los_Angeles walk select...`
