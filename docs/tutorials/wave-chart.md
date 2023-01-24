@@ -17,14 +17,13 @@ machbase-neo serve
 Create `EXAMPLE` table for this course if it doesn't exist.
 
 ```sh
-machbase-neo shell sql \
-    "create tag table EXAMPLE (name varchar(100) primary key, time datetime basetime, value double)"
+machbase-neo shell "create tag table EXAMPLE (name varchar(100) primary key, time datetime basetime, value double)"
 ```
 
 You could delete the table when you've done with it.
 
 ```sh
-machbase-neo shell sql "drop table EXAMPLE"
+machbase-neo shell "drop table EXAMPLE"
 ```
 
 # Make waves
