@@ -10,7 +10,7 @@ Go provides `database/sql` package you can incorporate a wide variety of databas
 
 This tutorial gives an introductory guide to access machbase-neo with `database/sql` package in Go.
 
-Find [full source code from github](https://github.com/machbase/machbase/blob/main/examples/go/sql_driver.go)
+Find [full source code from github]({{ site.examples_url }}/go/sql_driver.go)
 
 ## Install
 
@@ -32,7 +32,7 @@ import (
 ```
 
 {: .note }
-> The package name `github.com/machbase/neo-grpc/driver` implies that the driver is implemented over gRPC API of machbase-neo. See [gRPC API](/machbase/docs/api-grpc/).
+> The package name `github.com/machbase/neo-grpc/driver` implies that the driver is implemented over gRPC API of machbase-neo. See [gRPC API](/machbase/docs/api-grpc/) for more about it.
 
 Let's load sql driver and connect to server.
 

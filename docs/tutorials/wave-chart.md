@@ -29,7 +29,7 @@ machbase-neo shell "drop table EXAMPLE"
 
 ## Make waves
 
-1. Find [full source code from github](https://github.com/machbase/machbase/blob/main/examples/go/http_wave.go)
+1. Find [full source code from github]({{ site.examples_url }}/go/http_wave.go)
 2. Copy source code and save it as `wave.go`.
 3. `go run wave.go`
 
