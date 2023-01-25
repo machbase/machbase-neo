@@ -1,12 +1,20 @@
 ---
 parent: Tutorials
-title: Use Go SQL Driver
+title: How to use Go driver
 layout: default
 ---
 
-# How to use Machbase-neo Go driver
+# How to use Go driver
+
+Go provides `database/sql` package you can incorporate a wide variety of databases and data access in your applications.
+
+This tutorial gives an introductory guide to access machbase-neo with `database/sql` package in Go.
+
+Find [full source code from github](https://github.com/machbase/machbase/blob/main/examples/go/sql_driver.go)
 
 ## Install
+
+Add driver into your `go.mod`.
 
 ```sh
 $ go get -u github.com/machbase/neo-grpc/driver
@@ -14,13 +22,9 @@ $ go get -u github.com/machbase/neo-grpc/driver
 
 ## Import
 
-Create `neoclient.go` file and import the driver.
-
-Find [full source code from github](https://github.com/machbase/machbase/blob/main/examples/go/sql_driver.go)
+Add import statement of the driver.
 
 ```go
-package main
-
 import (
     "database/sql"
     _ "github.com/machbase/neo-grpc/driver"
@@ -44,8 +48,7 @@ When call `sql.Open()`, use driverName `machbase` and machbase-neo's gRPC addres
 Since we get `*sql.DB` successfully,  write and read data by standard sql syntax.
 
 ```go
-tag := "tag01"
-
+var tag = "tag01"
 _, err = db.Exec("INSERT INTO EXAMPLE (name, time, value) VALUES(?, ?, ?)", tag, time.Now(), 1.234)
 ```
 
@@ -58,8 +61,11 @@ row.Scan(&count)
 ```
 
 To iterate result of query, use `db.Query()` and get `*sql.Rows`.
-It is import to release `rows` as soon as possible when you finish the work to prevent leaking resource.
-General pattern is using `defer rows.Close()`.
+
+{: .note }
+> It is import not to forget releasing `rows` as soon as possible when you finish the work to prevent leaking resource.
+> 
+> General pattern is using `defer rows.Close()`.
 
 ```go
 rows, err := db.Query("SELECT name, time, value FROM EXAMPLE WHERE name = ? ORDER BY TIME DESC", tag)
