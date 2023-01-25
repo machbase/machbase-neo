@@ -3,8 +3,9 @@ parent: Tutorials
 title: Wave data and monitoring
 layout: default
 ---
+# Wave data and monitoring
 
-# Run machbase-neo server
+## Run machbase-neo server
 
 Start machbase-neo server.
 
@@ -12,7 +13,7 @@ Start machbase-neo server.
 machbase-neo serve
 ```
 
-# Create example table
+## Create example table
 
 Create `EXAMPLE` table for this course if it doesn't exist.
 
@@ -26,28 +27,19 @@ You could delete the table when you've done with it.
 machbase-neo shell "drop table EXAMPLE"
 ```
 
-# Make waves
+## Make waves
 
-Find [full source code from github](https://github.com/machbase/machbase/blob/main/examples/go/http_wave.go)
+1. Find [full source code from github](https://github.com/machbase/machbase/blob/main/examples/go/http_wave.go)
+2. Copy source code and save it as `wave.go`.
+3. `go run wave.go`
 
-1. Copy code from below and save it as `wave.go`.
+This Go code generates sine & cosine wave data and writes them into EXAMPLE table.
 
-2. `go run wave.go`
+### Code explains
 
-Go code that generates sine and cosine wave data and insert them into EXAMPLE table.
+Define data structure that represents the payload of write API.
 
 ```go
-package main
-
-import (
-    "bytes"
-    "encoding/json"
-    "fmt"
-    "math"
-    "net/http"
-    "time"
-)
-
 type WriteReq struct {
     Table string       `json:"table"`
     Data  WriteReqData `json:"data"`
@@ -57,44 +49,56 @@ type WriteReqData struct {
     Columns []string `json:"columns"`
     Rows    [][]any  `json:"rows"`
 }
+```
 
-func main() {
-    client := http.Client{}
-    // run every 500ms
-    for ts := range time.Tick(500 * time.Millisecond) {
-        // get values of sin, cos that have 15s period
-        delta := float64(ts.UnixMilli()%15000) / 15000
-        theta := 2 * math.Pi * delta
-        sin, cos := math.Sin(theta), math.Cos(theta)
+The API for writing data via HTTP is explained in [here](/machbase/docs/api-http/write) 
+and it expects JSON payload.
 
-        // make json payload of http api
-        content, _ := json.Marshal(&WriteReq{
-            Table: "EXAMPLE",
-            Data: WriteReqData{
-                Columns: []string{"name", "time", "value"},
-                Rows: [][]any{
-                    {"wave.sin", ts.UTC().UnixNano(), sin},
-                    {"wave.cos", ts.UTC().UnixNano(), cos},
-                },
-            },
-        })
-        rsp, err := client.Post(
-            "http://127.0.0.1:5654/db/write", 
-            "application/json", 
-            bytes.NewBuffer(content))
-        if err != nil {
-            panic(err)
-        }
-        if rsp.StatusCode != http.StatusOK {
-            panic(fmt.Errorf("response %d", rsp.StatusCode))
-        }
+We can prepre writing payload like below code, so that write multiple records within a payload.
+Assume `sin`, `cos` variables are properly initialized `float64` values.
+
+```go
+content, _ := json.Marshal(&WriteReq{
+    Table: "EXAMPLE",
+    Data: WriteReqData{
+        Columns: []string{"name", "time", "value"},
+        Rows: [][]any{
+            {"wave.sin", ts.UTC().UnixNano(), sin},
+            {"wave.cos", ts.UTC().UnixNano(), cos},
+        },
+    },
+})
+```
+
+It will be encoded as JSON for writing API like below.
+
+
+```json
+{
+    "table": "EXAMPLE",
+    "data": {
+        "columns":["name", "time", "value"],
+        "rows": [
+            [ "wave.sin", 1670380342000000000, 1.1 ],
+            [ "wave.cos", 1670380343000000000, 2.2 ]
+        ]
     }
 }
 ```
 
-# Watch waves
+Send it to server via http POST request.
 
-Use machabse-neo shell for monitoring incoming data.
+```go
+client := http.Client{}
+rsp, err := client.Post("http://127.0.0.1:5654/db/write", 
+    "application/json", bytes.NewBuffer(content))
+```
+
+Server replies `HTTP 200 OK` if it successfully wrtes data.
+
+## Watch waves
+
+Use machabse-neo shell, it provides simple command line tool for monitoring incoming data.
 
 ```sh
 machbase-neo shell chart --range 30s EXAMPLE/wave.sin#value EXAMPLE/wave.cos#value
@@ -102,7 +106,7 @@ machbase-neo shell chart --range 30s EXAMPLE/wave.sin#value EXAMPLE/wave.cos#val
 
 ![img](chart01.jpg)
 
-It is also possible browsing data with "walk" command of shell like below.
+It is also possible browsing table data forward/backward with "walk" command like below.
 
 ```sh
 machbase-neo shell walk "select * from EXAMPLE order by time desc"
@@ -112,8 +116,10 @@ machbase-neo shell walk "select * from EXAMPLE order by time desc"
 
 {: .note }
 
-> Use shell command with `--tz` option to display time in a time-zone other than 'UTC'. 
-> This option accepts 'UTC', 'local' and tz database format (eg: 'Europe/Paris')
+> Machbase treats all time data in UTC as default.
+> Use `--tz` option with shell command to display time in a time-zone other than 'UTC'. 
+> This option accepts 'local' and tz database format (eg: 'Europe/Paris').
+> 
 > 
 > `machbase-neo shell --tz=local walk select...`
 >

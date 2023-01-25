@@ -14,15 +14,15 @@ Find [full source code from github](https://github.com/machbase/machbase/blob/ma
 
 ## Install
 
-Add driver into your `go.mod`.
+Tp add driver into your `go.mod`, execute this command on your working directory.
 
 ```sh
-$ go get -u github.com/machbase/neo-grpc/driver
+go get -u github.com/machbase/neo-grpc/driver
 ```
 
 ## Import
 
-Add import statement of the driver.
+Add import statement in your source file.
 
 ```go
 import (
@@ -30,6 +30,9 @@ import (
     _ "github.com/machbase/neo-grpc/driver"
 )
 ```
+
+{: .note }
+> The package name `github.com/machbase/neo-grpc/driver` implies that the driver is implemented over gRPC API of machbase-neo. See [gRPC API](/machbase/docs/api-grpc/).
 
 Let's load sql driver and connect to server.
 
@@ -41,11 +44,11 @@ if err != nil {
 defer db.Close()
 ```
 
-When call `sql.Open()`, use driverName `machbase` and machbase-neo's gRPC address.
+`sql.Open()` is called, `machbase` as driverName and second argument is machbase-neo's gRPC address.
 
 ## Insert and Query
 
-Since we get `*sql.DB` successfully,  write and read data by standard sql syntax.
+Since we get `*sql.DB` successfully, write and read data can be done by Go standard sql package.
 
 ```go
 var tag = "tag01"
