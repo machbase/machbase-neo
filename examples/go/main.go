@@ -24,6 +24,7 @@ func main() {
 		"grpc_append":    grpc_append,
 		"grpc_wave":      grpc_wave,
 		"http_wave":      http_wave,
+		"sql_driver":     sql_driver,
 	}
 
 	if fn, ok := examples[ex]; ok {
