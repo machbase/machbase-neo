@@ -30,8 +30,11 @@ machbase-neo shell "drop table EXAMPLE"
 ## Make waves
 
 1. Find [full source code from github]({{ site.examples_url }}/go/http_wave/http_wave.go)
-2. Copy source code and save it as `wave.go`.
-3. `go run wave.go`
+2. Copy source code and save it as `http_wave.go` or just run script below
+```sh
+curl -o http_wave.go "https://raw.githubusercontent.com/machbase/machbase/main/examples/go/http_wave/http_wave.go"
+```
+3. `go run http_wave.go`
 
 This Go code generates sine & cosine wave data and writes them into EXAMPLE table.
 
@@ -124,3 +127,27 @@ machbase-neo shell walk "select * from EXAMPLE order by time desc"
 > `machbase-neo shell --tz=local walk select...`
 >
 > `machbase-neo shell --tz=America/Los_Angeles walk select...`
+
+## Make waves in gRPC
+
+gRPC version of wave generator example is also available.
+Since it doesn't need to define custom data structures for payload,
+requires less lines of code compare to HTTP.
+
+1. Find [full source code from github]({{ site.examples_url }}/go/grpc_wave/grpc_wave.go)
+2. Create directory `grpc_wave`
+```sh
+mkdir grpc_wave && cd grpc_wave
+```
+3. Copy source code and save it as `grpc_wave.go` or run script below in the directory.
+```sh
+curl -o grpc_wave.go "https://raw.githubusercontent.com/machbase/machbase/main/examples/go/grpc_wave/grpc_wave.go"
+```
+4. Initialize go mod and prepare dependent modules.
+```sh
+go mod init wave && go mod tidy
+```
+6. Run
+```sh
+go run .
+```
