@@ -10,7 +10,7 @@ Go provides `database/sql` package you can incorporate a wide variety of databas
 
 This tutorial gives an introductory guide to access machbase-neo with `database/sql` package in Go.
 
-Find [full source code from github]({{ site.examples_url }}/go/sql_driver.go)
+Find [full source code from github]({{ site.examples_url }}/go/sql_driver/sql_driver.go)
 
 ## Install
 

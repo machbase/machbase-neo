@@ -1,12 +1,13 @@
 package main
 
 import (
+	"fmt"
 	"time"
 
 	"github.com/machbase/neo-grpc/machrpc"
 )
 
-func grpc_cretable() {
+func main() {
 	opts := []machrpc.ClientOption{
 		machrpc.QueryTimeout(5 * time.Second),
 	}
@@ -17,12 +18,12 @@ func grpc_cretable() {
 	}
 	defer cli.Disconnect()
 
-	sqlText := `create tag table example (
-		name varchar(100) primary key, 
-		time datetime basetime, 
-		value double
-	)`
-	if err := cli.Exec(sqlText); err != nil {
+	var count int
+
+	sqlText := `select count(*) from example`
+	row := cli.QueryRow(sqlText)
+	if err := row.Scan(&count); err != nil {
 		panic(err)
 	}
+	fmt.Println("count=", count)
 }

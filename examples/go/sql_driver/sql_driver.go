@@ -8,7 +8,7 @@ import (
 	_ "github.com/machbase/neo-grpc/driver"
 )
 
-func sql_driver() {
+func main() {
 	db, err := sql.Open("machbase", "127.0.0.1:5655")
 	if err != nil {
 		panic(err)

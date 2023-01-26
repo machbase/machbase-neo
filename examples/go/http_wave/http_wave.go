@@ -19,7 +19,7 @@ type WriteReqData struct {
 	Rows    [][]any  `json:"rows"`
 }
 
-func http_wave() {
+func main() {
 	client := http.Client{}
 	for ts := range time.Tick(500 * time.Millisecond) {
 		delta := float64(ts.UnixMilli()%15000) / 15000

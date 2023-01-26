@@ -1,13 +1,12 @@
 package main
 
 import (
-	"fmt"
 	"time"
 
 	"github.com/machbase/neo-grpc/machrpc"
 )
 
-func grpc_queryrow() {
+func main() {
 	opts := []machrpc.ClientOption{
 		machrpc.QueryTimeout(5 * time.Second),
 	}
@@ -18,12 +17,8 @@ func grpc_queryrow() {
 	}
 	defer cli.Disconnect()
 
-	var count int
-
-	sqlText := `select count(*) from example`
-	row := cli.QueryRow(sqlText)
-	if err := row.Scan(&count); err != nil {
+	sqlText := `insert into example (name, time, value)  values (?, ?, ?)`
+	if err := cli.Exec(sqlText, "n1", time.Now(), 1.234); err != nil {
 		panic(err)
 	}
-	fmt.Println("count=", count)
 }

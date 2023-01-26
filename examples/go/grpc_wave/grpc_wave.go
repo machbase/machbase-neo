@@ -7,7 +7,7 @@ import (
 	"github.com/machbase/neo-grpc/machrpc"
 )
 
-func grpc_wave() {
+func main() {
 	opts := []machrpc.ClientOption{
 		machrpc.QueryTimeout(5 * time.Second),
 	}
