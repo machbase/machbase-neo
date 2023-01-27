@@ -21,7 +21,7 @@ machbase-neo shell chart \
     EXAMPLE/wave.sin
 ```
 
-This command generates HTML page like below.
+This command generates "chart.html" file that specified in `--output` like below.
 
 ![img](chart-html.jpg)
 
