@@ -14,8 +14,8 @@ This is pre-release packages that are not officially supproted.
 
 | OS         | Architecture   |  Download |
 |:-----------|:---------------|:----------|
-| Linux      | arm64          | [machbase-neo-{{ site.latest_version }}-linux-arm64.zip](https://github.com/machbase/machbase/releases/download/{{ site.latest_version }}/machbase-neo-{{ site.latest_version }}-linux-arm64.zip) |
-| Linux      | x64            | [machbase-neo-{{ site.latest_version }}-linux-amd64.zip](https://github.com/machbase/machbase/releases/download/{{ site.latest_version }}/machbase-neo-{{ site.latest_version }}-linux-amd64.zip) |
+| Linux      | arm64          | [machbase-neo-{{ site.latest_version }}-linux-arm64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-{{ site.latest_version }}-linux-arm64.zip) |
+| Linux      | x64            | [machbase-neo-{{ site.latest_version }}-linux-amd64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-{{ site.latest_version }}-linux-amd64.zip) |
 | macOS      | arm64          |          |
 | macOS      | x64            |          |
 | Windows    | x64            |          |
