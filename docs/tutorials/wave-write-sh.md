@@ -47,7 +47,7 @@ sh ./script_save.sh
 ```
 
 It periodically prints sin/cos values with name (`wave.sin`, `wave.cos`), UNIX epoch time and value per a second as below.
-The output is in csv and it is intended to utilize `machbase-neo shell` command.
+The output is in csv and it is intended to be utilized by `machbase-neo shell` command.
 
 ```cs
 wave.sin,1674815646,0.000000
@@ -83,7 +83,7 @@ TAGS     wave.cos, wave.sin
 └───┴───────┴──────────┴────────┘
 ```
 
-When we import csv data into a table, it is important to make fields of csv in order of table's columns and its type.
+When we import csv data into a table, it is important to make fields of csv arranged in order of columns in table and its type.
 
 ## Step 3. Combine script and command
 

@@ -7,6 +7,9 @@ has_children: true
 
 # Wave data and monitoring
 
+Through this tutorial, We are going to cover serveral different ways how to write data into Machbase-neo and read from it.
+
+
 ## Run machbase-neo server
 
 Start machbase-neo server.
@@ -23,15 +26,13 @@ Create `EXAMPLE` table for this course if it doesn't exist.
 machbase-neo shell "create tag table EXAMPLE (name varchar(100) primary key, time datetime basetime, value double)"
 ```
 
-You could delete the table when you've done with it.
+You can delete the table first when you want to create fresh one.
 
 ```sh
 machbase-neo shell "drop table EXAMPLE"
 ```
 
-## Make waves
-
-We are going to cover serveral different ways how to write data into Machbase-neo through this tutorial.
+## Make waves - write data
 
 - [x] Shell script using `machbase-neo shell` command
 - [ ] Python client program writing data via HTTP API.
@@ -39,9 +40,7 @@ We are going to cover serveral different ways how to write data into Machbase-ne
 - [x] Go client program writing data via gRPC API.
 
 
-## Watch waves
-
-Since we learned various ways to to write data, it's time to know how we can "watch" the data that we collect.
+## Watch waves - read data
 
 - [x] Graph on terminal
 - [X] Table view on terminal
