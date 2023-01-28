@@ -1,6 +1,6 @@
 ---
 title: Reading data on terminal
-parent: Wave data and monitoring
+parent: Let's make waves
 grand_parent: Tutorials
 layout: default
 order: 30

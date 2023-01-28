@@ -1,6 +1,6 @@
 ---
 title: Generating HTML Chart
-parent: Wave data and monitoring
+parent: Let's make waves
 grand_parent: Tutorials
 layout: default
 order: 30
@@ -15,8 +15,10 @@ Execute it and open output html file with your web browser.
 
 ```sh
 machbase-neo shell chart \
-    --range 1m --count 1 \
-    --output chart.html --format html \
+    --range 1m \
+    --count 1 \
+    --output chart.html \
+    --format html \
     --html-title "Let's make waves" \
     EXAMPLE/wave.sin EXAMPLE/wave.sin
 ```

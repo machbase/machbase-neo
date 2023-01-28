@@ -1,13 +1,13 @@
 ---
 title: Generating JSON for Chart.js
-parent: Wave data and monitoring
+parent: Let's make waves
 grand_parent: Tutorials
 layout: default
 order: 30
 nav_order: 230
 ---
 
-# Generating JSON form Chart.js
+# Generating JSON for Chart.js
 
 Command below generates JSON data that is compatible for [Chart.js](https://www.chartjs.org/docs/latest/){:target="_blank" rel="noopener"}
 

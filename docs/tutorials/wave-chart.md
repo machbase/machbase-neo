@@ -1,11 +1,11 @@
 ---
+title: Let's make waves
 parent: Tutorials
-title: Wave data and monitoring
 layout: default
 has_children: true
 ---
 
-# Wave data and monitoring
+# Let's make waves
 
 Through this tutorial, We are going to cover serveral different ways how to write data into Machbase-neo and read from it.
 
