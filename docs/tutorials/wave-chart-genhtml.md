@@ -1,5 +1,5 @@
 ---
-title: Generating HTML Chart
+title: Generating HTML chart
 parent: Let's make waves
 grand_parent: Tutorials
 layout: default
@@ -7,7 +7,7 @@ order: 30
 nav_order: 220
 ---
 
-# Generating HTML Chart
+# Generating HTML chart
 
 Command below generates `chart.html` file that contains a chart.
 

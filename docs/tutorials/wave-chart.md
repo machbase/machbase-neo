@@ -32,21 +32,21 @@ You can delete the table first when you want to create fresh one.
 machbase-neo shell "drop table EXAMPLE"
 ```
 
-## Make waves - write data
+## Make waves - How to write data
 
-- [x] Shell script using `machbase-neo shell` command
-- [ ] Python client program writing data via HTTP API.
-- [x] Go client program writing data via HTTP API.
-- [x] Go client program writing data via gRPC API.
+- [x] Shell script using `machbase-neo shell` command [🔗](./wave-write-sh.md)
+- [ ] Python client program writing data via HTTP API
+- [x] Go client program writing data via HTTP API [🔗](./wave-write-go-http.md)
+- [x] Go client program writing data via gRPC API [🔗](./wave-write-go-grpc.md)
 
 
-## Watch waves - read data
+## Surfing waves - How to query data
 
-- [ ] Query table
+- [x] Query table [🔗](./wave-read-sh.md)
 
-## Watch waves - chart
+## Watch waves - How to visualize data
 
-- [x] Graph on terminal
-- [X] Table view on terminal
-- [x] Generate chart HTML 
+- [x] Graph on terminal [🔗](./wave-chart-term.md)
+- [x] Generate chart HTML [🔗](./wave-chart-genhtml.md)
+- [x] Generate chart JSON [🔗](./wave-chart-genjson.md)
 - [ ] Using Grapana plugin for Machbase-neo

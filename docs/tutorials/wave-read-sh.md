@@ -161,7 +161,7 @@ machbase-neo shell help timeformat
 | RFC3339       |    2006-01-02T15:04:05Z07:00              |
 | Kitchen       |    3:04:05PM                              |
 | Stamp         |    Jan _2 15:04:05                        |
-| ...(there are more)...       |
+| ...(there are more)...       | Please consult `machbase-neo shell help timeformat` |
 
 Try `--timeformat numeric` format.
 
