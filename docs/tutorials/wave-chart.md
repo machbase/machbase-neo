@@ -42,6 +42,10 @@ machbase-neo shell "drop table EXAMPLE"
 
 ## Watch waves - read data
 
+- [ ] Query table
+
+## Watch waves - chart
+
 - [x] Graph on terminal
 - [X] Table view on terminal
 - [x] Generate chart HTML 
