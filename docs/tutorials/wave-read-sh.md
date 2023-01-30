@@ -177,7 +177,7 @@ machbase-neo shell sql \
  1  wave.sin  01/28 02:03:59PM '23 +0000  0.214839
 ```
 
-`-t` is a shorten alias of `--format`
+`-t` is a shorten alias of `--timeformat`
 
 ```sh
 machbase-neo shell sql \

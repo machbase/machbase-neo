@@ -24,6 +24,13 @@ Machbase is the fastest timeseries database in the world[^1] with minimal foot-p
 
 Find and download machbase package from [releases](./releases/) page.
 
+## Tutorials
+
+[Let's make waves](./docs/tutorials/wave-chart.md) tutorial is good starting point.
+
+If you are a gopher and looking for sql/driver for Machbase Neo, please visit "[How to use Go driver](./docs/tutorials/go-driver.md)".
+
+
 ## Contributing
 
 We welcome and encourage community contributions to documents and examples for other developers. Typo and broken link fixes are appreciated.
