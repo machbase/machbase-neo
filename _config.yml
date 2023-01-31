@@ -22,14 +22,14 @@ title: Machbase Neo
 email: support@machbase.com
 description: >- # this means to ignore newlines until "baseurl:"
   Machbase releases and documations.
-baseurl: "/machbase" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://machbase.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: machbase
 github_username: machbase
 
 latest_version: v0.0.9
-examples_url: https://github.com/machbase/machbase/tree/main/examples
-releases_url: https://github.com/machbase/machbase/releases
+examples_url: https://github.com/machbase-neo/machbase/tree/main/examples
+releases_url: https://github.com/machbase-neo/machbase/releases
 
 # Build settings
 #theme: just-the-docs
@@ -114,7 +114,7 @@ heading_anchors: true
 # Aux links for the upper right navigation
 aux_links:
   "GitHub":
-    - "//github.com/MACHBASE/machbase"
+    - "//github.com/MACHBASE/machbase-neo"
 
 # Makes Aux links open in a new tab. Default is false
 aux_links_new_tab: false
