@@ -26,7 +26,7 @@ Find and download machbase package from [releases](./releases/) page.
 
 ## Tutorials
 
-[Let's make waves](./docs/tutorials/wave-chart.md) tutorial is good starting point.
+[Let's make waves](./docs/tutorials/wave-chart.md) tutorial is a good starting point.
 
 If you are a gopher and looking for sql/driver for Machbase Neo, please visit "[How to use Go driver](./docs/tutorials/go-driver.md)".
 

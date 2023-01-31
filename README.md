@@ -1,10 +1,11 @@
 # Machbase Neo Documents
 
-This repository is for the **Machbase Neo** documentation published at [machbase.github.io/machbase](https://machbase.github.io/machbase)
+This repository is for the **Machbase Neo** documentation published at [https://neo.machbase.com](https://neo.machbase.com/).
 
-# Writer's environment
 
-## Ubuntu
+## Writer's environment
+
+### Ubuntu
 
 1. `apt-get install ruby-full build-essential zlib1g-dev`
 2. add PATH
@@ -18,7 +19,7 @@ This repository is for the **Machbase Neo** documentation published at [machbase
 4. `bundle install`
 5. `bundle exec jekyll serve`
 
-## macOS
+### macOS
 
 1. `brew install chruby ruby-install xz`
 2. `ruby-install ruby 3.1.3`

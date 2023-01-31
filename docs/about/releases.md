@@ -8,18 +8,34 @@ parent: Welcome to machbase
 
 # Releases
 
+{: .warning}
+> These are in pre-release stage that are not officially supported.
+
 ## Latest version {{ site.latest_version }}
 
-This is pre-release packages that are not officially supproted.
+### Fog Edition
+
+Fog is standard edition for server-grade machines.
 
 | OS         | Architecture   |  Download |
 |:-----------|:---------------|:----------|
-| Linux      | arm64          | [machbase-neo-{{ site.latest_version }}-linux-arm64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-{{ site.latest_version }}-linux-arm64.zip) |
-| Linux      | x64            | [machbase-neo-{{ site.latest_version }}-linux-amd64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-{{ site.latest_version }}-linux-amd64.zip) |
-| macOS      | arm64          |          |
+| Linux      | arm64          |           |
+| Linux      | x64            | [machbase-neo-fog-{{ site.latest_version }}-linux-amd64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-fog-{{ site.latest_version }}-linux-amd64.zip) |
+| macOS      | arm64          | [machbase-neo-fog-{{ site.latest_version }}-darwin-arm64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-fog-{{ site.latest_version }}-darwin-arm64.zip) |
 | macOS      | x64            |          |
-| Windows    | x64            |          |
+
+
+### Edge Edition
+
+Edge is optimized edition for small machines that has limited resource like Raspberry pi.
+
+| OS         | Architecture   |  Download |
+|:-----------|:---------------|:----------|
+| Linux      | arm64          | [machbase-neo-edge-{{ site.latest_version }}-linux-arm64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-edge-{{ site.latest_version }}-linux-arm64.zip) |
+| Linux      | x64            | [machbase-neo-edge-{{ site.latest_version }}-linux-amd64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-edge-{{ site.latest_version }}-linux-amd64.zip) |
+| macOS      | arm64          | [machbase-neo-edge-{{ site.latest_version }}-darwin-arm64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-edge-{{ site.latest_version }}-darwin-arm64.zip) |
+| macOS      | x64            |          |
 
 ## Previous releases
 
-Find previously released versions in [here](https://github.com/machbase/machbase/releases).
+Find previously released versions in [here](https://github.com/machbase/machbase-neo/releases).
