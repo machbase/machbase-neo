@@ -23,10 +23,8 @@ github.com/google/go-cmp v0.3.1/go.mod h1:8QqcDgzrUqlUb/G2PQTWiueGozuR1884gddMyw
 github.com/google/go-cmp v0.4.0/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
 github.com/google/go-cmp v0.5.5/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
 github.com/google/go-cmp v0.5.9 h1:O2Tfq5qg4qc4AmwVlvv0oLiVAGB7enBSJ2x2DqQFi38=
-github.com/machbase/neo-grpc v0.0.5-0.20230117034931-464a7abdbf94 h1:zKfhtMXa5XEMbOoTazKsFEjXswHiEXw74aqb4F1TQ60=
-github.com/machbase/neo-grpc v0.0.5-0.20230117034931-464a7abdbf94/go.mod h1:qQSw+8ZdJ+a+b1gXtu+kfafZU8h74XSr0jErnRGAq5c=
-github.com/machbase/neo-grpc v0.0.5-0.20230124091308-ca7d29657000 h1:0RIhHTOKRgEtJTMOiZHuCQhXbDX1exFhUomkqkZSrkA=
-github.com/machbase/neo-grpc v0.0.5-0.20230124091308-ca7d29657000/go.mod h1:qQSw+8ZdJ+a+b1gXtu+kfafZU8h74XSr0jErnRGAq5c=
+github.com/machbase/neo-grpc v0.1.0 h1:koki00dGkk1zFh6xuHG8284gGKraYS28TiHw2KjZ/1s=
+github.com/machbase/neo-grpc v0.1.0/go.mod h1:qQSw+8ZdJ+a+b1gXtu+kfafZU8h74XSr0jErnRGAq5c=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/prometheus/client_model v0.0.0-20190812154241-14fe0d1b01d4/go.mod h1:xMI15A0UPsDsEKsMN9yxemIoYk6Tm2C1GtYGdfGttqA=
