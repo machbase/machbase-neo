@@ -17,5 +17,5 @@ machbase-neo shell chart \
     EXAMPLE/wave.sin#value EXAMPLE/wave.cos#value
 ```
 
-![img](term-chart.gif)
+![img](term-chart02.gif)
 
