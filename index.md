@@ -11,8 +11,8 @@ has_toc: false
 
 ✓ Performant timeseries database <br/>
 ✓ Scalable from Raspberry Pi to high-end servers <br/>
-✓ Easy to install - download and run <br/>
-✓ Easy to learn - familiar SQL with Tables, Columns <br/>
+✓ Easy to install - instant download and run <br/>
+✓ Easy to learn - familiar SQL with Tables and Columns <br/>
 ✓ Easy to write and query via **HTTP**, **MQTT** and **gRPC** <br/>
 
 
@@ -41,7 +41,7 @@ sh -c "$(curl -fsSL https://neo.machbase.com/assets/install.sh)" sh {{site.lates
 
 ## Tutorials
 
-[Let's make waves](./docs/tutorials/wave-chart.md) tutorial is a good starting point.
+[Let's make waves](./docs/tutorials/wave-chart.md) tutorial will be a good starting point.
 
 If you are a gopher and looking for sql/driver for Machbase Neo, please visit "[How to use Go driver](./docs/tutorials/go-driver.md)".
 
