@@ -11,7 +11,7 @@ has_toc: false
 
 ✓ Performant timeseries database <br/>
 ✓ Scalable from Raspberry Pi to high-end servers <br/>
-✓ Easy installation - download and run <br/>
+✓ Easy to install - download and run <br/>
 ✓ Easy to learn - familiar SQL with Tables, Columns <br/>
 ✓ Easy to write and query via **HTTP**, **MQTT** and **gRPC** <br/>
 
@@ -30,6 +30,14 @@ Machbase is the fastest timeseries database in the world[^1] with minimal foot-p
 ## Download & Try Machbase Neo 
 
 Find and download machbase package from [releases](./releases/) page.
+
+### Instant download
+
+Paste the script below in shell prompt.
+
+```sh
+sh -c "$(curl -fsSL https://neo.machbase.com/assets/install.sh)" sh {{site.latest_version}}
+```
 
 ## Tutorials
 
