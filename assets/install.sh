@@ -4,7 +4,7 @@ UNAMEP=`uname -p`
 VERSION="$1"
 EDITION="$2"
 
-if [ "$VERSION" == "" ]; then
+if [ -z "$VERSION" ]; then
     echo "no version is specified"
     exit 1
 fi
@@ -46,16 +46,16 @@ case $EDITION in
     fog)
         ;;
     *)
-        if [[ "$UNAMES" == "darwin" ]]; then
+        if [ "$UNAMES" = "darwin" ]; then
             EDITION="fog"
-        elif [[ "$UNAMES" == "linux" ]]; then
-            NP=`nrpoc`
+        elif [ "$UNAMES" = "linux" ]; then
+            NP=`nproc`
             if [ $NP -gt 8 ]; then
                 EDITION="fog"
             else
                 EDITION="edge"
             fi
-            echo "Installing '$EDITION' edition, because host machine has $NP processors."
+            echo "Installing '$EDITION' edition, host machine has $NP processors."
         else
             EDITION="edge"
             echo "Installing '$EDITION' edition by default."
