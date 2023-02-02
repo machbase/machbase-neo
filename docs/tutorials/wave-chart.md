@@ -26,6 +26,8 @@ Create `EXAMPLE` table for this course if it doesn't exist.
 machbase-neo shell "create tag table EXAMPLE (name varchar(100) primary key, time datetime basetime, value double)"
 ```
 
+![ex_cre_table](ex_cre_table.gif)
+
 You can delete the table first when you want to create fresh one.
 
 ```sh

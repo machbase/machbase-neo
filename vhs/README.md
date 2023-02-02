@@ -1,6 +1,8 @@
 
 ## install vhs
 
+> https://github.com/charmbracelet/vhs
+
 ```sh
 brew install vhs
 ```

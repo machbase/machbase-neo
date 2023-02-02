@@ -49,16 +49,9 @@ sh ./script_save.sh
 It periodically prints sin/cos values with name (`wave.sin`, `wave.cos`), UNIX epoch time and value per a second as below.
 The output is in csv and it is intended to be utilized by `machbase-neo shell` command.
 
-```
-wave.sin,1674815646,0.000000
-wave.cos,1674815646,1.000000
-wave.sin,1674815647,0.406736
-wave.cos,1674815647,0.913546
-wave.sin,1674815648,0.743144
-wave.cos,1674815648,0.669131
-```
-
 Press `^C` to stop shell script.
+
+![wave-write-sh01](wave-write-sh01.gif)
 
 Why the output csv should be in this order? It's depends on the table scheme.
 
@@ -121,10 +114,7 @@ echo "wave.pi,`date +%s`,3.141592" | machbase-neo shell import -t s EXAMPLE
 Then let's query the latest value.
 
 ```sh
-$ machbase-neo shell "select * from EXAMPLE where NAME='wave.pi' order by time desc limit 1"
-
- #  NAME     TIME(UTC)                   VALUE
-──────────────────────────────────────────────────
- 1  wave.pi  2023-01-27 23:03:45.000000  3.141592
-
+machbase-neo shell "select * from EXAMPLE where NAME='wave.pi' order by time desc limit 1"
  ```
+
+ ![wave-write-sh02](wave-write-sh02.gif)
