@@ -43,7 +43,7 @@ Find and download file of proper edition and platform from [releases](./releases
 
 ## Tutorials
 
-[Let's make waves](./docs/tutorials/wave-chart.md) tutorial will be a good starting point.
+[Let's make waves](./docs/letsmakewaves/00.index.md) tutorial will be a good starting point.
 
 If you are a gopher and looking for sql/driver for Machbase Neo, please visit "[How to use Go driver](./docs/tutorials/go-driver.md)".
 
