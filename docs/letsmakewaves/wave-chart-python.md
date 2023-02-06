@@ -1,7 +1,6 @@
 ---
 title: Chart in Python
 parent: Let's make waves
-grand_parent: Tutorials
 layout: default
 order: 30
 nav_order: 230
@@ -38,4 +37,4 @@ plt.legend()
 plt.show()
 ```
 
-![](python-chart.jpg)
+![](../img/python-chart.jpg)

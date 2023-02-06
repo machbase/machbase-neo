@@ -1,7 +1,6 @@
 ---
 title: JSON for Chart.js
 parent: Let's make waves
-grand_parent: Tutorials
 layout: default
 order: 30
 nav_order: 230

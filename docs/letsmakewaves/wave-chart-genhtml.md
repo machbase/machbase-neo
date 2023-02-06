@@ -1,7 +1,6 @@
 ---
 title: Generating HTML chart
 parent: Let's make waves
-grand_parent: Tutorials
 layout: default
 order: 30
 nav_order: 220
@@ -25,5 +24,5 @@ machbase-neo shell chart \
 
 This command generates "chart.html" file that specified in `--output` like below.
 
-![img](chart-html.jpg)
+![img](../img/chart-html.jpg)
 

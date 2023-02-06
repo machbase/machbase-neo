@@ -1,6 +1,6 @@
 ---
-parent: Tutorials
 title: How to use Go driver
+parent: Tutorials
 layout: default
 ---
 

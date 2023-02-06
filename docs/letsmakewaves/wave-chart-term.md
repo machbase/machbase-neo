@@ -1,7 +1,6 @@
 ---
 title: Chart on terminal
 parent: Let's make waves
-grand_parent: Tutorials
 layout: default
 order: 30
 nav_order: 210
@@ -17,5 +16,5 @@ machbase-neo shell chart \
     EXAMPLE/wave.sin#value EXAMPLE/wave.cos#value
 ```
 
-![img](term-chart02.gif)
+![img](../img/term-chart02.gif)
 

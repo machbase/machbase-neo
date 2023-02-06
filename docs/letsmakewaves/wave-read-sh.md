@@ -1,7 +1,6 @@
 ---
 title: Read waves by shell
 parent: Let's make waves
-grand_parent: Tutorials
 layout: default
 order: 30
 nav_order: 200
@@ -26,7 +25,7 @@ machbase-neo shell "select * from EXAMPLE order by time desc"
   ...
 ```
 
-![img](shell-sql.gif)
+![img](../img/shell-sql.gif)
 
 We executed query by `machbase-neo shell` without `sql` sub-command above example.
 It properly printed out result of query which is becuase machbase-neo shell takes `sql` sub-command as default as long as there are no other arguments and flags. This means `machbase-neo shell "select..."` is same with `machbase-neo shell sql "select..."`.
@@ -78,7 +77,7 @@ Then you can scroll up/down with keyboard, press `ESC` to exit table view.
 
 Press `r` to re-execute query to refresh result, it is particularly useful with query was sorted by `order by time desc` to see the latest values when data is continuously being written.
 
-![img](shell-walk.gif)
+![img](../img/shell-walk.gif)
 
 ## Query Output format
 
