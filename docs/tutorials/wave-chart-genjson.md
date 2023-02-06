@@ -1,5 +1,5 @@
 ---
-title: Generating JSON for Chart.js
+title: JSON for Chart.js
 parent: Let's make waves
 grand_parent: Tutorials
 layout: default
