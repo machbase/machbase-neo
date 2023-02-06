@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Machbase Neo
+title: machbase-neo
 email: support@machbase.com
 description: >- # this means to ignore newlines until "baseurl:"
   Machbase releases and documations.
@@ -117,7 +117,7 @@ heading_anchors: true
 # Aux links for the upper right navigation
 aux_links:
   "GitHub":
-    - "//github.com/MACHBASE/machbase-neo"
+    - "//github.com/machbase/machbase-neo"
 
 # Makes Aux links open in a new tab. Default is false
 aux_links_new_tab: false

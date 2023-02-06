@@ -159,3 +159,50 @@ func main() {
 	// disconnect mqtt connection
 	client.Disconnect(100)
 }
+
+/*
+func publisherExample() {
+	wg.Wait()
+	if tableExists {
+		// drop table
+		jsonStr = `{ "q": "drop table TAGDATA" }`
+		wg.Add(1)
+		client.Publish("db/query", 1, false, []byte(jsonStr))
+		wg.Wait()
+	}
+
+
+quitChan := make(chan os.Signal)
+alive := true
+
+// start generator
+wg.Add(1)
+go func() {
+	rand.Seed(time.Now().Unix())
+	for alive {
+		jsonStr = fmt.Sprintf(`[ "series-1", %d, %.5f, null ]`, time.Now().UTC().UnixNano(), rand.Float32())
+		rt := client.Publish("db/append/TAGDATA", 1, false, []byte(jsonStr))
+
+		// if publish was not successful
+		if !rt.WaitTimeout(1 * time.Second) {
+			fmt.Println("no reponse from server")
+			quitChan <- os.Interrupt
+		} else if err := rt.Error(); err != nil {
+			fmt.Println("ERR", err.Error())
+			quitChan <- os.Interrupt
+		}
+		time.Sleep(1 * time.Second)
+	}
+	wg.Done()
+}()
+
+// wait signal
+signal.Notify(quitChan, os.Interrupt, syscall.SIGINT, syscall.SIGTERM)
+<-quitChan
+
+// wait generator to finish
+alive = false
+wg.Wait()
+
+}
+*/
