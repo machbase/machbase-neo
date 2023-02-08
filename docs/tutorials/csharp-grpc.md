@@ -8,43 +8,43 @@ layout: default
 
 ## Install dotnet-sdk
 
-```
+```sh
 brew install dotnet-sdk
 ```
 
 ## Create project directory
 
-```
+```sh
 mkdir example-csharp && cd example-csharp
 ```
 
 ## Create console project
 
-```
+```sh
 dotnet new console --framework net7.0
 ```
 
 ## Add gRPC packages
 
-```
-dotnet add package Grpc.Tools --version 2.51.0
-dotnet add package Grpc.Net.Client --version 2.51.0
-dotnet add package Google.Protobuf --version 3.21.12
+```sh
+dotnet add package Grpc.Tools
+dotnet add package Grpc.Net.Client
+dotnet add package Google.Protobuf
 ```
 
 ## Download machrpc.proto
 
-```
+```sh
 curl -o machrpc.proto https://raw.githubusercontent.com/machbase/neo-grpc/main/proto/machrpc.proto
 ```
 
-## Edit `machrpc.proto` adding namespace
+After downloading proto file, it is required to add csharp_namespace option in the file.
 
-```
+```proto
 option csharp_namespace = "MachRpc";
 ```
 
-## Add ItemGroup in `.csproj` XML file
+## Add ItemGroup in `example-csharp.csproj` XML file
 
 ```xml
   <ItemGroup>
@@ -54,6 +54,126 @@ option csharp_namespace = "MachRpc";
 
 ## Code
 
+### Connect to server 
+
+```csharp
+var channel = GrpcChannel.ForAddress("http://127.0.0.1:5655");
+var client = new MachRpc.Machbase.MachbaseClient(channel);
+```
+
+### Execute query
+
+```c#
+var req = new MachRpc.QueryRequest
+{
+    Sql = "select * from example order by time limit ?",
+    Params = { Any.Pack(new Int32Value { Value = 10 }) }
+};
+var rsp = client.Query(req);
+```
+
+### Get columns info of result set
+
+```c#
+var cols = client.Columns(rsp.RowsHandle);
+var headers = new List<string>{"RowNum"};
+if (cols.Success) {
+    foreach (var c in cols.Columns) {
+        headers.Add($"{c.Name}({c.Type})");
+    }
+}
+Console.WriteLine(String.Join("   ", headers));
+```
+
+This will print column labels.
+
+```
+NAME(string)   TIME(datetime)   VALUE(double)
+```
+
+### Fetch results
+
+```c#
+int nrow = 0;
+try
+{
+    while (true)
+    {
+        var fetch = client.RowsFetch(rsp.RowsHandle);
+        if (fetch.HasNoRows)
+        {
+            break;
+        }
+        nrow++;
+        var line = new List<string> { $"{nrow}   "};
+        foreach (Any v in fetch.Values)
+        {
+            line.Add(convpb(v));
+        };
+        Console.WriteLine(String.Join("    ", line));
+    }
+}
+finally
+{
+    if (rsp.Success && rsp.RowsHandle != null)
+    {
+        client.RowsClose(rsp.RowsHandle);
+    }
+}
+```
+
+{:.warning-title}
+>Close rows
+>
+> Do not forget to close rows by calling `RowsClose()`.
+
+
+### Convert Google.Protobuf.WellKnownTypes.Any to string
+
+```c#
+static string convpb(Any v)
+{
+    if (v.TypeUrl == "type.googleapis.com/google.protobuf.StringValue")
+    {
+        var sval = v.Unpack<StringValue>();
+        return sval.Value;
+    }
+    else if (v.TypeUrl == "type.googleapis.com/google.protobuf.Timestamp")
+    {
+        var ts = v.Unpack<Timestamp>();
+        return ts.ToDateTime().ToString("MM/dd/yyyy HH:mm:ss");
+    }
+    else if (v.TypeUrl == "type.googleapis.com/google.protobuf.DoubleValue")
+    {
+        var fv = v.Unpack<DoubleValue>();
+        return fv.Value.ToString();
+    }
+    else
+    {
+        throw new Exception($"Unsupported type {v.TypeUrl}");
+    }
+}
+```
+
+## Output
+
+```
+$ dotnet run
+RowNum   NAME(string)   TIME(datetime)   VALUE(double)
+1       wave.sin    2023. 02. 08 11:36:38    -0.994521
+2       wave.cos    2023. 02. 08 11:36:38    -0.104538
+3       wave.sin    2023. 02. 08 11:36:37    -0.866021
+4       wave.cos    2023. 02. 08 11:36:37    -0.500008
+5       wave.cos    2023. 02. 08 11:36:36    -0.809022
+6       wave.sin    2023. 02. 08 11:36:36    -0.587778
+7       wave.cos    2023. 02. 08 11:36:35    -0.978149
+8       wave.sin    2023. 02. 08 11:36:35    -0.207904
+9       wave.cos    2023. 02. 08 11:36:34    -0.978146
+10       wave.sin    2023. 02. 08 11:36:34    0.207919
+```
+
+## Full source code
+
 ```csharp
 using Grpc.Net.Client;
 using Google.Protobuf.WellKnownTypes;
@@ -62,28 +182,75 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        using var channel = GrpcChannel.ForAddress("http://127.0.0.1:5655");
+        var channel = GrpcChannel.ForAddress("http://127.0.0.1:5655");
         var client = new MachRpc.Machbase.MachbaseClient(channel);
-        var resp = client.Query(new MachRpc.QueryRequest{
-            Sql = "select * from example order by time limit 10"
-        });
+        var req = new MachRpc.QueryRequest
+        {
+            Sql = "select * from example order by time limit ?",
+            Params = { Any.Pack(new Int32Value { Value = 10 }) }
+        };
+        var rsp = client.Query(req);
 
-        for (int nrow = 0; true; nrow++) {
-            var fetch = client.RowsFetch(resp.RowsHandle);
-            if(fetch.HasNoRows ){
-                break;
-            }
-            foreach(Any v in fetch.Values) {
-                Console.WriteLine(v);
+        var cols = client.Columns(rsp.RowsHandle);
+        var headers = new List<string>{"RowNum"};
+        if (cols.Success)
+        {
+            foreach (var c in cols.Columns)
+            {
+                headers.Add($"{c.Name}({c.Type})");
             }
         }
-        client.RowsClose(resp.RowsHandle);
+        Console.WriteLine(String.Join("   ", headers));
+
+        int nrow = 0;
+        try
+        {
+            while (true)
+            {
+                var fetch = client.RowsFetch(rsp.RowsHandle);
+                if (fetch.HasNoRows)
+                {
+                    break;
+                }
+                nrow++;
+                var line = new List<string> { $"{nrow}   "};
+                foreach (Any v in fetch.Values)
+                {
+                    line.Add(convpb(v));
+                };
+                Console.WriteLine(String.Join("    ", line));
+            }
+        }
+        finally
+        {
+            if (rsp.Success && rsp.RowsHandle != null)
+            {
+                client.RowsClose(rsp.RowsHandle);
+            }
+        }
+    }
+
+    static string convpb(Any v)
+    {
+        if (v.TypeUrl == "type.googleapis.com/google.protobuf.StringValue")
+        {
+            var sval = v.Unpack<StringValue>();
+            return sval.Value;
+        }
+        else if (v.TypeUrl == "type.googleapis.com/google.protobuf.Timestamp")
+        {
+            var ts = v.Unpack<Timestamp>();
+            return ts.ToDateTime().ToString("yyyy/MM/dd HH:mm:ss");
+        }
+        else if (v.TypeUrl == "type.googleapis.com/google.protobuf.DoubleValue")
+        {
+            var fv = v.Unpack<DoubleValue>();
+            return fv.Value.ToString();
+        }
+        else
+        {
+            throw new Exception($"Unsupported type {v.TypeUrl}");
+        }
     }
 }
-```
-
-## Run
-
-```
-dotnet run
 ```

@@ -50,21 +50,21 @@ import machrpc_pb2
 import machrpc_pb2_grpc
 ```
 
-Connect to server
+### Connect to server
 
 ```python
 channel = grpc.insecure_channel('127.0.0.1:5655')
 mach_stub = machbase_proto_pb2_grpc.MachbaseStub(channel)
 ```
 
-Execute query.
+### Execute query
 
 ```python
 sqlText = "select * from example order by time limit 10"
 rsp = stub.Query(mach.QueryRequest(sql=sqlText))
 ```
 
-Get columns info of result set.
+### Get columns info of result set
 
 ```python
 cols = stub.Columns(rsp.rowsHandle)
@@ -75,7 +75,7 @@ if cols.success:
     print('   '.join(header))
 ```
 
-Fetch results.
+### Fetch results
 
 ```python
 nrow = 0
@@ -105,7 +105,7 @@ _ = stub.RowsClose(rsp.rowsHandle)
 >
 > It is important to close rows by calling `RowsClose(handle)`.
 
-Convert protobuf.any value to python data type
+### Convert protobuf.any value to python data type
 
 ```python
 from google.protobuf.any_pb2 import Any
