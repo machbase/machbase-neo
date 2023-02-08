@@ -31,7 +31,7 @@ Machbase is the fastest timeseries database in the world[^1] with minimal foot-p
 
 ### Instant download
 
-Paste the script below in shell prompt for the latest version of recommended edition.
+Paste the script below into the shell prompt for the latest version of the recommended edition.
 
 ```sh
 sh -c "$(curl -fsSL https://neo.machbase.com/assets/install.sh)" sh {{site.latest_version}}
@@ -39,7 +39,7 @@ sh -c "$(curl -fsSL https://neo.machbase.com/assets/install.sh)" sh {{site.lates
 
 ### Choose edition and version manually
 
-Find and download file of proper edition and platform from [releases](./releases/) page.
+Find and download file of the proper edition and platform from the [releases](./releases/) page.
 
 ## Tutorials
 
