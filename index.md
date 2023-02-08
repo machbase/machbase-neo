@@ -47,7 +47,7 @@ Find and download file of the proper edition and platform from the [releases](./
 
 If you are a gopher and looking for sql/driver for Machbase Neo, please visit "[How to use Go driver](./docs/tutorials/go-driver.md)".
 
-For Python user, "[How to use gRPC API in Python](./docs/tutorials/python-grpc.md)".
+For Python user, "[How to use gRPC API in Python](./docs/tutorials/python-grpc-01setup.md)".
 
 For C# programmer, "[How to use gRPC API in C#](./docs/tutorials/csharp-grpc-01setup.md)".
 
