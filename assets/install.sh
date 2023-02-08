@@ -5,6 +5,10 @@ VERSION="$1"
 EDITION="$2"
 
 if [ -z "$VERSION" ]; then
+    VERSION=`curl -fsSL https://api.github.com/repos/machbase/machbase-neo/releases/latest |grep tag_name | awk '{print $2}' | tr -d '",'`
+fi
+
+if [ -z "$VERSION" ]; then
     echo "no version is specified"
     exit 1
 fi
