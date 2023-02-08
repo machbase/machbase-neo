@@ -8,14 +8,17 @@ parent: Welcome to machbase
 
 # Releases
 
-{: .warning}
-> These are in pre-release stage that are not officially supported.
+{: .note-title}
+> Edge vs. Fog
+>
+> If you plan to run Machbase-neo on a small device such as Raspberry Pi, select the Edge edition.
+> For machines with larger memory and more CPU cores, such as a personal workstation or server, choose the Fog edition.
 
 ## Latest version {{ site.latest_version }}
 
 ### Fog Edition
 
-Fog is standard edition for server-grade machines.
+The Fog edition is for desktop and server-grade machines.
 
 | OS         | Architecture   |  Download |
 |:-----------|:---------------|:----------|
@@ -27,7 +30,7 @@ Fog is standard edition for server-grade machines.
 
 ### Edge Edition
 
-Edge is optimized edition for small machines that has limited resource like Raspberry pi.
+The Edge edition is optimized for small machines with limited resources, such as the Raspberry Pi.
 
 | OS         | Architecture   |  Download |
 |:-----------|:---------------|:----------|
