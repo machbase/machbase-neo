@@ -1,10 +1,10 @@
 ---
-title: gRPC API in C# (1. Setup)
+title: gRPC in C# (1.Setup)
 parent: Tutorials
 layout: default
 ---
 
-# gRPC API in C# (1. Setup)
+# gRPC API in C# (1.Setup)
 
 ## Install dotnet-sdk
 

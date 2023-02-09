@@ -1,10 +1,10 @@
 ---
-title: gRPC API in Python (2. Query)
+title: gRPC in Python (2.Query)
 parent: Tutorials
 layout: default
 ---
 
-# gRPC API in Python (2. Query)
+# gRPC API in Python (2.Query)
 
 ## Codes
 

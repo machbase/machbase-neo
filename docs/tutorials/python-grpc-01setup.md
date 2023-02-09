@@ -1,10 +1,10 @@
 ---
-title: gRPC API in Python (1. Setup)
+title: gRPC in Python (1.Setup)
 parent: Tutorials
 layout: default
 ---
 
-# gRPC API in Python (1. Setup)
+# gRPC API in Python (1.Setup)
 
 ## Python gRPC
 
