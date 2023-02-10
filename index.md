@@ -45,6 +45,8 @@ Find and download file of the proper edition and platform from the [releases](./
 
 [Let's make waves](./docs/letsmakewaves/00.index.md) tutorial will be a good starting point.
 
+If you are looking for how to install machbase-neo on ![raspi](/assets/img/raspi_logo_32.png) Raspberry PI, [this tutorial](./docs/tutorials/raspi-server.md) will be helpful.
+
 [Tutorials](./docs/tutorials/) section has more tutorials.
 
 ### Go
