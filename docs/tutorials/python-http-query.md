@@ -4,7 +4,7 @@ parent: Tutorials
 layout: default
 ---
 
-# Load Pandas.DataFrom directly from HTTP API.
+# Load Pandas DataFrame directly from HTTP API.
 
 This example shows how to load data into pandas dataframe via machbase-neo HTTP API.
 
