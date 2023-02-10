@@ -1,10 +1,10 @@
 ---
-title: gRPC API in C# (3. Append)
+title: gRPC in C# (3.Append)
 parent: Tutorials
 layout: default
 ---
 
-# gRPC API in C# (3. Append)
+# gRPC API in C# (3.Append)
 
 ## Code
 

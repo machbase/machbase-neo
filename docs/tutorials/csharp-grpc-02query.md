@@ -1,10 +1,10 @@
 ---
-title: gRPC API in C# (2. Query)
+title: gRPC in C# (2.Query)
 parent: Tutorials
 layout: default
 ---
 
-# gRPC API in C# (2. Query)
+# gRPC API in C# (2.Query)
 
 ## Code
 

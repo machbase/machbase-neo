@@ -1,10 +1,10 @@
 ---
-title: gRPC API in Python (3. Append)
+title: gRPC in Python (3.Append)
 parent: Tutorials
 layout: default
 ---
 
-# gRPC API in Python (3. Append)
+# gRPC API in Python (3.Append)
 
 ## Codes
 
@@ -18,7 +18,6 @@ import numpy as np
 import time
 import google.protobuf.wrappers_pb2 as pb_wp
 from google.protobuf.any_pb2 import Any
-
 ```
 
 ### `Any` type converters for protocol buffer
@@ -38,7 +37,7 @@ def AnyInt64(iv: int):
     anyint.Pack(pbint)
     return anyint
 
-def AnyFloat(fv: int):
+def AnyFloat(fv: float):
     pbfloat = pb_wp.DoubleValue()
     pbfloat.value = fv
     anyfloat = Any()
