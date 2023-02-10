@@ -1,5 +1,5 @@
 ---
-title: Load Pandas.DataFrame
+title: Load CSV Pandas
 parent: Tutorials
 layout: default
 ---
@@ -9,6 +9,8 @@ layout: default
 This example shows how to load data into pandas dataframe via machbase-neo HTTP API.
 
 ![img](img/python_http_csv.jpg)
+
+## Load CSV
 
 Import pandas and urllib.
 
@@ -22,10 +24,34 @@ Use `timeformat` to specify the precision of time data. `s`, `ms`, `us` and `ns`
 
 ```py
 query_param = parse.urlencode({
-    "q":"select * from example order by time limit 200",
+    "q":"select * from example order by time limit 500",
     "format": "csv",
     "timeformat": "s",
 })
-data = pd.read_csv(f"http://127.0.0.1:5654/db/query?{query_param}")
-print(data)
+df = pd.read_csv(f"http://127.0.0.1:5654/db/query?{query_param}")
+df
 ```
+
+## Load Compressed CSV
+
+Read gzip'ed CSV from HTTP API.
+
+```py
+from urllib import parse
+import pandas as pd
+import requests
+import io
+```
+
+```py
+query_param = parse.urlencode({
+    "q":"select * from example order by time desc limit 1000",
+    "format": "csv",
+    "timeformat": "s",
+    "compress": "gzip",
+})
+response = requests.get(f"http://127.0.0.1:5654/db/query?{query_param}", timeout=30, stream=True)
+df = pd.read_csv(io.BytesIO(response.content))
+df
+```
+
