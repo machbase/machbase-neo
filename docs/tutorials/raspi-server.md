@@ -48,12 +48,7 @@ $ cd machbase-neo-edge-v{version}-linux-arm64
 ![img](./img/raspi-install.gif)
 
 
-{:.note-title}
-
-> shutdown machbase-neo
->
-> Press `Ctrl+C`
->
+Press `Ctrl+C` to shutdown machbase-neo.
 
 ## Bind ip address for accessing out side of Raspberry PI
 
@@ -79,13 +74,16 @@ DHT11 has 3 leads - VCC, DAT, GND connect each lead to gpio 2, 3, 6.
 
 ## Read sensor data
 
+Install `Adafruit_DHT` python module for accessing sensor data.
+
 ```sh
 pip3 install Adafruit_DHT
 ```
 
-It reads data from GPIO 2 (`pinnum = 2` in the code below) that we connected DAT lead of DHT11.
-Print out the data at every 1 second into standard output in forms of `name, timestamp, value`.
-The sample code set timestamp with multiply `*1000000000` so that machbase-neo handles time in nano-seconds precision.
+The code reads data from the GPIO 2 pin (`pinnum = 2`), which is connected to the DAT lead of the DHT11 sensor.
+It outputs the data in the form of "name, timestamp, value" every second to the standard output.
+To ensure that machbase-neo can handle the time with nano-second precision,
+the sample code sets the timestamp using multiplication by 1000000000.
 
 ```py
 import Adafruit_DHT
@@ -103,7 +101,7 @@ while (True):
         sleep(1)
 ```
 
-Save this code as `dht.py` and try to run.
+Save this code as `dht.py` and execute dry-run.
 
 ```sh
 $ python dht.py
@@ -140,7 +138,7 @@ Since we redirect python's standard output into `machbase-neo shell import` comm
 
 ### Read recently written data
 
-Open another terminal, run sql the check lacently written data.
+Open another terminal, run sql the check the recently written data.
 
 The option `--tz local` is for displaying TIME field in local time zone instead of UTC.
 

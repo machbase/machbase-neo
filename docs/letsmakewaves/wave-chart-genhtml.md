@@ -19,7 +19,7 @@ machbase-neo shell chart \
     --output chart.html \
     --format html \
     --html-title "Let's make waves" \
-    EXAMPLE/wave.sin EXAMPLE/wave.sin
+    EXAMPLE/wave.sin EXAMPLE/wave.cos
 ```
 
 This command generates "chart.html" file that specified in `--output` like below.
