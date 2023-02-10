@@ -39,6 +39,18 @@ The Edge edition is optimized for small machines with limited resources, such as
 | macOS      | arm64          | [machbase-neo-edge-{{ site.latest_version }}-darwin-arm64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-edge-{{ site.latest_version }}-darwin-arm64.zip) |
 | macOS      | x64            |  imminent |
 
+## What's Changed {{ site.latest_version }}
+
+### 🎉 Features
+* start flag for grpc unix domain socket path by @OutOfBedlam in https://github.com/machbase/neo-server/pull/2
+* Add HTTP query API supporting csv output by @OutOfBedlam in https://github.com/machbase/neo-server/pull/3
+
+## New Contributors
+* @OutOfBedlam made their first contribution in https://github.com/machbase/neo-server/pull/2
+
+**Full Changelog**: https://github.com/machbase/neo-server/compare/v0.2.0...v0.2.1
+
+
 ## Previous releases
 
 Find previously released versions in [here](https://github.com/machbase/machbase-neo/releases).
