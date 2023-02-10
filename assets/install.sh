@@ -1,5 +1,5 @@
 UNAMES=`uname -s`
-UNAMEP=`uname -p`
+UNAMEP=`uname -m`
 
 VERSION="$1"
 EDITION="$2"
