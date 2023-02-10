@@ -136,6 +136,8 @@ python dht.py | ./machbase-neo shell import example
 
 Since we redirect python's standard output into `machbase-neo shell import` command by pipe `|`, there will be no output message.
 
+## Read data 
+
 ### Read recently written data
 
 Open another terminal, run sql the check lacently written data.
@@ -150,4 +152,22 @@ Press 'r' key to re-execute query to refresh new data.
 
 ![walk](./img/raspi-walk.gif)
 
+
+### Read data from application
+
+Since machbase-neo provides HTTP API for application to query stored data,
+It is easy to query data with SQL and HTTP like below.
+
+```py
+from urllib import parse
+import pandas as pd
+query_param = parse.urlencode({
+    "q":"select * from example order by time limit 500",
+    "format": "csv",
+})
+df = pd.read_csv(f"http://192.168.1.214:5654/db/query?{query_param}")
+df
+```
+
+![query](./img/raspi-query.jpg)
 
