@@ -129,7 +129,7 @@ While `machbase-neo serve` is running, create `example` table by the shell comma
 ### Write data
 
 Execute `dht.py` and redirect its output to `machabse-neo shell import`.
-Import command accepts csv format as default and continuously write to the specified table (here `example`).
+Import command accepts csv format by default and keep writing incoming line by line to the specified table (here `example`) until it reaches to the EOF.
 
 ```sh
 python dht.py | ./machbase-neo shell import example
