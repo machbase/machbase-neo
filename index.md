@@ -45,7 +45,7 @@ Find and download file of the proper edition and platform from the [releases](./
 
 [Let's make waves](./docs/letsmakewaves/00.index.md) tutorial will be a good starting point.
 
-[Raspberry PI as IoT server](./docs/tutorials/raspi-server.md) shows how to install machbase-neo on ![raspi](/assets/img/raspi_logo_16.png) Raspberry PI and utilize it as a IoT server.
+[Raspberry PI as IoT server](./docs/tutorials/raspi-server.md) shows how to install machbase-neo on Raspberry PI and utilize it as an IoT server.
 
 [Tutorials](./docs/tutorials/) section has more tutorials.
 
