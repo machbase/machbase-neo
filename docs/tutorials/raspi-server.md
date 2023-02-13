@@ -116,7 +116,7 @@ humidity,1676008540007633664,33.0
 ^C
 ```
 
-## Write sendsor data into machbase neo
+## Write sensor data into machbase neo
 
 ### Create table `example`
 
@@ -128,6 +128,9 @@ While `machbase-neo serve` is running, create `example` table by the shell comma
 
 ### Write data
 
+Execute `dht.py` and redirect its output to `machabse-neo shell import`.
+Import command accepts csv format by default and keep writing incoming line by line to the specified table (here `example`) until it reaches to the EOF.
+
 ```sh
 python dht.py | ./machbase-neo shell import example
 ```
@@ -138,7 +141,7 @@ Since we redirect python's standard output into `machbase-neo shell import` comm
 
 ### Read recently written data
 
-Open another terminal, run sql the check the recently written data.
+While running wrting process, open another terminal and run sql the check the recently written data.
 
 The option `--tz local` is for displaying TIME field in local time zone instead of UTC.
 
@@ -153,8 +156,7 @@ Press 'r' key to re-execute query to refresh new data.
 
 ### Read data from application
 
-Since machbase-neo provides HTTP API for application to query stored data,
-It is easy to query data with SQL and HTTP like below.
+Since machbase-neo provides HTTP API for application to the query stored data, it is easy requesting HTTP query data with SQL like below.
 
 ```py
 from urllib import parse

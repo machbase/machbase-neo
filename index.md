@@ -45,26 +45,9 @@ Find and download file of the proper edition and platform from the [releases](./
 
 [Let's make waves](./docs/letsmakewaves/00.index.md) tutorial will be a good starting point.
 
-If you are looking for how to install machbase-neo on ![raspi](/assets/img/raspi_logo_32.png) Raspberry PI, [this tutorial](./docs/tutorials/raspi-server.md) will be helpful.
+[Raspberry PI as IoT server](./docs/tutorials/raspi-server.md) shows how to install machbase-neo on Raspberry PI and utilize it as an IoT server.
 
 [Tutorials](./docs/tutorials/) section has more tutorials.
-
-### Go
-
-- [How to use Go driver](./docs/tutorials/go-driver.md)
-
-### Python
-
-- [Pandas reads CSV with HTTP API](./docs/tutorials/python-http-query.md)
-- [How to use gRPC API in Python](./docs/tutorials/python-grpc-01setup.md)
-
-### Java
-
-- [How to use gRPC API in Java](./docs/tutorials/java-grpc-01setup.md)
-
-### C#
-
-- [How to use gRPC API in C#](./docs/tutorials/csharp-grpc-01setup.md)
 
 ## Contributing
 
