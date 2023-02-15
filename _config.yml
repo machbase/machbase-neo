@@ -33,7 +33,7 @@ releases_url: https://github.com/machbase/machbase-neo/releases
 
 # Build settings
 #theme: just-the-docs
-remote_theme: just-the-docs/just-the-docs@v0.4.0.rc4
+remote_theme: just-the-docs/just-the-docs@v0.4.0
 plugins:
   - jekyll-feed
   - jekyll-seo-tag

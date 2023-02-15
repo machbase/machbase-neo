@@ -1,9 +1,7 @@
 ---
 layout: default
-parent: HTTP API
-title: Write Programming
-nav_order: 39
-permalink: /docs/api-http/write-program
+title: HTTP write in Go
+parent: Tutorials
 has_children: false
 ---
 
