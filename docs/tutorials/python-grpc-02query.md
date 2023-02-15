@@ -5,75 +5,22 @@ layout: default
 ---
 
 # gRPC API in Python (2.Query)
+{:.no_toc}
 
-## Codes
+1. TOC
+{:toc}
 
 Let's make `example.py`
 
-### import modules
+## Type `any` converter
 
-```python
-import grpc
-import machrpc_pb2
-import machrpc_pb2_grpc
-```
+The machbase-neo gRPC is relying on `"google/protobuf/any.proto` package for its data types.
+It is required to define a type conversion function.
 
-### Connect to server
+The function below is convert protobuf any type to proper python data types.
 
-```python
-channel = grpc.insecure_channel('127.0.0.1:5655')
-mach_stub = machbase_proto_pb2_grpc.MachbaseStub(channel)
-```
 
-### Execute query
-
-```python
-sqlText = "select * from example order by time limit 10"
-rsp = stub.Query(mach.QueryRequest(sql=sqlText))
-```
-
-### Get columns info of result set
-
-```python
-cols = stub.Columns(rsp.rowsHandle)
-if cols.success:
-    header = ['RowNum']
-    for c in cols.columns:
-        header.append(f"{c.name}({c.type})  ")
-    print('   '.join(header))
-```
-
-### Fetch results
-
-```python
-nrow = 0
-while True:
-    fetch = stub.RowsFetch(rsp.rowsHandle)
-    if fetch.hasNoRows:
-        break
-    nrow+=1
-    line = []
-    line.append(str(nrow))
-    for i, c in enumerate(cols.columns):
-        v = fetch.values[i]
-        if c.type == "string":
-            line.append(convpb(v))
-        elif c.type == "datetime":
-            line.append(convpb(v))
-        elif c.type == "double":
-            line.append(convpb(v))
-        else:
-            line.append(f"unknown {str(v)}")
-    print('     '.join(line))
-_ = stub.RowsClose(rsp.rowsHandle)
-```
- 
-{:.warning-title}
->Close rows
->
-> It is important to close rows by calling `RowsClose(handle)`.
-
-### Convert protobuf.any value to python data type
+## Convert protobuf.any value to python data type
 
 ```python
 from google.protobuf.any_pb2 import Any
@@ -97,3 +44,78 @@ def convpb(v):
         v.Unpack(r)
         return str(r.value)
 ```
+
+## Connect
+
+### Import packages
+
+Import gRPC runtime package and generated files.
+
+```python
+import grpc
+import machrpc_pb2_grpc
+import machrpc_pb2
+```
+
+### Connect to server
+
+Make gRPC channel to server then create a machbase-neo API stub.
+
+```python
+channel = grpc.insecure_channel('127.0.0.1:5655')
+mach_stub = machrpc_pb2_grpc.MachbaseStub(channel)
+```
+
+## Execute query
+
+Run SQL query with the stub.
+
+```python
+sqlText = "select * from example order by time limit 10"
+rsp = mach_stub.Query(machrpc_pb2.QueryRequest(sql=sqlText))
+```
+
+## Get columns info of result set
+
+We can get columns meta information of result rows after executing a query.
+
+```python
+cols = mach_stub.Columns(rsp.rowsHandle)
+if cols.success:
+    header = ['RowNum']
+    for c in cols.columns:
+        header.append(f"{c.name}({c.type})  ")
+    print('   '.join(header))
+```
+
+## Fetch results
+
+Retrieve the result records by calling `Fetch`.
+
+```python
+nrow = 0
+while True:
+    fetch = mach_stub.RowsFetch(rsp.rowsHandle)
+    if fetch.hasNoRows:
+        break
+    nrow+=1
+    line = []
+    line.append(str(nrow))
+    for i, c in enumerate(cols.columns):
+        v = fetch.values[i]
+        if c.type == "string":
+            line.append(convpb(v))
+        elif c.type == "datetime":
+            line.append(convpb(v))
+        elif c.type == "double":
+            line.append(convpb(v))
+        else:
+            line.append(f"unknown {str(v)}")
+    print('     '.join(line))
+_ = mach_stub.RowsClose(rsp.rowsHandle)
+```
+ 
+{:.warning-title}
+>Rows must be Closed
+>
+> It is important to close rows by calling `RowsClose(handle)`.

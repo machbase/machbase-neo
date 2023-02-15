@@ -8,6 +8,8 @@ layout: default
 
 ## Python gRPC
 
+Install gRPC compiler for Python.
+
 ```sh
 pip3 install grpcio grpcio-tools
 ```
