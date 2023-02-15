@@ -1,5 +1,5 @@
 ---
-title: Load CSV Pandas
+title: Load CSV into Pandas
 parent: Tutorials
 layout: default
 ---

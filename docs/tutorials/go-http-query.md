@@ -1,12 +1,9 @@
 ---
 layout: default
-parent: HTTP API
-title: Query Programming
-nav_order: 29
-permalink: /docs/api-http/query-program
+title: HTTP query in Go
+parent: Tutorials
 has_children: false
 ---
-
 
 #### GET Query
 

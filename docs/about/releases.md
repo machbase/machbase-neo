@@ -42,14 +42,9 @@ The Edge edition is optimized for small machines with limited resources, such as
 ## What's Changed {{ site.latest_version }}
 
 ### 🎉 Features
-* start flag for grpc unix domain socket path by @OutOfBedlam in https://github.com/machbase/neo-server/pull/2
-* Add HTTP query API supporting csv output by @OutOfBedlam in https://github.com/machbase/neo-server/pull/3
+* import & export by @OutOfBedlam in https://github.com/machbase/neo-server/pull/4
 
-## New Contributors
-* @OutOfBedlam made their first contribution in https://github.com/machbase/neo-server/pull/2
-
-**Full Changelog**: https://github.com/machbase/neo-server/compare/v0.2.0...v0.2.1
-
+**Full Changelog**: https://github.com/machbase/neo-server/compare/v0.2.1...v0.2.2
 
 ## Previous releases
 
