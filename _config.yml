@@ -27,7 +27,7 @@ url: "https://neo.machbase.com" # the base hostname & protocol for your site, e.
 twitter_username: machbase
 github_username: machbase
 
-latest_version: v0.2.1
+latest_version: v0.2.2
 examples_url: https://github.com/machbase/machbase-neo/tree/main/examples
 releases_url: https://github.com/machbase/machbase-neo/releases
 
