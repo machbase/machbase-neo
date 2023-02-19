@@ -5,7 +5,7 @@ VERSION="$1"
 EDITION="$2"
 
 if [ -z "$VERSION" ]; then
-    VERSION=`curl -fsSL https://api.github.com/repos/machbase/machbase-neo/releases/latest |grep tag_name | awk '{print $2}' | tr -d '",'`
+    VERSION=`curl -fsSL https://api.github.com/repos/machbase/neo-server/releases/latest |grep tag_name | awk '{print $2}' | tr -d '",'`
 fi
 
 if [ -z "$VERSION" ]; then
@@ -74,6 +74,6 @@ FNAME="machbase-neo-$EDITION-$VERSION-$UNAMES-$UNAMEP.zip"
 echo "Downloading... $FNAME"
 
 curl -L -o $FNAME \
-    "https://github.com/machbase/machbase-neo/releases/download/${VERSION}/${FNAME}" \
+    "https://github.com/machbase/neo-server/releases/download/${VERSION}/${FNAME}" \
     && echo "\n\nDownload complete $FNAME"
 
