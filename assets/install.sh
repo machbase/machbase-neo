@@ -33,14 +33,21 @@ case $UNAMEP in
     aarch64)
         UNAMEP="arm64"
     ;;
-    arm)
+    arm64)
         UNAMEP="arm64"
     ;;
-    i386)
-        UNAMEP="i386"
+    armv6l)
+        UNAMEP="arm32"
+    ;;
+    armv7l)
+        UNAMEP="arm32"
     ;;
     x86_64)
         UNAMEP="amd64"
+    ;;
+    *)
+        echo "Unsupported ARCH $UNAMEP"
+        exit 1
     ;;
 esac
 
@@ -53,11 +60,15 @@ case $EDITION in
         if [ "$UNAMES" = "darwin" ]; then
             EDITION="fog"
         elif [ "$UNAMES" = "linux" ]; then
-            NP=`nproc`
-            if [ $NP -gt 8 ]; then
-                EDITION="fog"
-            else
+            if [ "$UNAMEP" = "arm32" ]; then
                 EDITION="edge"
+            else
+                NP=`nproc`
+                if [ $NP -gt 8 ]; then
+                    EDITION="fog"
+                else
+                    EDITION="edge"
+                fi
             fi
             echo "Installing '$EDITION' edition, host machine has $NP processors."
         else
