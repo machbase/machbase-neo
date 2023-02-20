@@ -60,6 +60,11 @@ Run command below to "describe" the table.
 machbase-neo shell desc EXAMPLE
 ```
 
+{: .note-title}
+> TIP
+>
+> If you didn't start machbase-neo server and didn't create the `EXAMPLE` table, please refer to [here](00.index.md) for the preparation.
+
 Subcommand `desc <table>` shows some details of the table.
 
 ```
@@ -75,7 +80,7 @@ TAGS     wave.cos, wave.sin
 └───┴───────┴──────────┴────────┘
 ```
 
-When we import csv data into a table, it is important to make fields of csv arranged in order of columns in the table and its type.
+When we import the csv data into a table, it is important to make fields of csv arranged in order of columns in the table and its type.
 
 ## Step 3. Combine script and command
 
