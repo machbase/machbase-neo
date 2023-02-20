@@ -64,7 +64,7 @@ case $EDITION in
                 EDITION="edge"
             else
                 NP=`nproc`
-                if [ $NP -gt 8 ]; then
+                if [ $NP -gt 4 ]; then
                     EDITION="fog"
                 else
                     EDITION="edge"
