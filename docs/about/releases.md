@@ -42,16 +42,7 @@ The Edge edition is optimized for small machines with limited resources, such as
 
 ## What's Changed {{ site.latest_version }}
 
-### 🎉 Features
-* inputstream spi by @OutOfBedlam in https://github.com/machbase/neo-server/pull/5
-*  missing machbase bind host machbase/neo#17 by @OutOfBedlam in https://github.com/machbase/neo-server/pull/6
-* fix missing elapse by @OutOfBedlam in https://github.com/machbase/neo-server/pull/7
-* msg rearrange by @OutOfBedlam in https://github.com/machbase/neo-server/pull/8
-* Refactoring neo-shell by @OutOfBedlam in https://github.com/machbase/neo-server/pull/9
-* ssh key based user auth machbase/neo#13 by @OutOfBedlam in https://github.com/machbase/neo-server/pull/10
-* linux arm32 machbase/neo#22 by @OutOfBedlam in https://github.com/machbase/neo-server/pull/11
-
-**Full Changelog**: https://github.com/machbase/neo-server/compare/v0.2.2...v0.3.0
+[Changes](https://github.com/machbase/neo-server/releases/tag/{{ site.latest_version }})
 
 ## Previous releases
 
