@@ -8,7 +8,7 @@ nav_order: 100
 # Document contributor
 
 You can find the source code for the documentation at GitHub:
-[machbase-neo](https://github.com/machbase/machbase-neo)
+[neo-docs](https://github.com/machbase/neo-docs)
 
 ## Setup writting environment
 
