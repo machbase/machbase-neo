@@ -18,8 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-#title: machbase-neo
-title: <img src=/assets/img/logo_machbase_neo.png/>
+title: machbase-neo
 email: support@machbase.com
 description: >- # this means to ignore newlines until "baseurl:"
   Machbase releases and documations.
