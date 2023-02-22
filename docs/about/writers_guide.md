@@ -2,7 +2,7 @@
 layout: page
 title: Document contributor
 parent: Welcome to machbase
-nav_order: 3
+nav_order: 100
 ---
 
 # Document contributor
