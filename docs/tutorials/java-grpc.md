@@ -72,7 +72,7 @@ for how to generate code from `.proto` file.
 Download or paste the soruce code from the link below into `src/main/java/com/machbase/neo/example/Example.java`.
 
 {:.note}
-> Full source code of the example is available in [here]({{site.examples_url}/java/grpc).
+> Full source code of the example is available in [here]({{site.examples_url}}/java/grpc).
 
 ### Generate code from .proto
 
