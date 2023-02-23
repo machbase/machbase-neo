@@ -2,6 +2,7 @@
 title: How to use Go driver
 parent: Tutorials
 layout: default
+nav_order: 9
 ---
 
 # How to use Go driver

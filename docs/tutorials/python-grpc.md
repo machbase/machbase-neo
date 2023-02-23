@@ -2,6 +2,7 @@
 title: gRPC API in Python
 parent: Tutorials
 layout: default
+nav_order: 101
 ---
 
 # gRPC API in Python (1.Setup)

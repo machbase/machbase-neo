@@ -2,6 +2,7 @@
 title: Raspberry PI as IoT server
 parent: Tutorials
 layout: default
+nav_order: 1
 ---
 
 # Raspberry PI as IoT server

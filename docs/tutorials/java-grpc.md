@@ -2,6 +2,7 @@
 title: gRPC API in Java
 parent: Tutorials
 layout: default
+nav_order: 105
 ---
 
 # gRPC API in Java

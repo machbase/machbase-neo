@@ -3,6 +3,7 @@ layout: default
 title: HTTP API in JavaScript
 parent: Tutorials
 has_children: false
+nav_order: 92
 ---
 
 # HTTP API in JavaScript
@@ -23,7 +24,21 @@ fetch(`http://127.0.0.1:5654/db/query?q=${encodeURIComponent(q)}`)
   })
   .then(data => {
     console.log(data)
+  });
+```
+
+### GET CSV
+
+```js
+
+q = "select * from example"
+fetch(`http://127.0.0.1:5654/db/query?q=${encodeURIComponent(q)}&format=csv`)
+  .then(res => {
+    return res.text();
   })
+  .then(data => {
+    console.log(data)
+  });
 ```
 
 ## Write
@@ -47,5 +62,20 @@ fetch('http://127.0.0.1:5654/db/write/example', {
         'Content-Type':'application/json'
     },
     body: JSON.stringify(payload)
-  })
+  });
+```
+
+### POST CSV
+
+```js
+payload = `temperature,1677033057000000000,21.1
+humidity,1677033057000000000,0.53`
+
+fetch('http://127.0.0.1:5654/db/write/example', {
+    method: 'POST',
+    headers: {
+        'Content-Type':'text/csv'
+    },
+    body: payload
+  });
 ```

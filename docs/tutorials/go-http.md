@@ -3,6 +3,7 @@ layout: default
 title: HTTP API in Go
 parent: Tutorials
 has_children: false
+nav_order: 93
 ---
 
 # HTTP API in Go

@@ -1,10 +1,11 @@
 ---
-title: Load CSV into Pandas
+title: Read CSV with Pandas
 parent: Tutorials
 layout: default
+nav_order: 5
 ---
 
-# Load Pandas DataFrame directly from HTTP API.
+# Pandas DataFrame directly from HTTP API.
 
 This example shows how to load data into pandas dataframe via machbase-neo HTTP API.
 
