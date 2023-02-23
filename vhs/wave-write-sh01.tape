@@ -4,7 +4,7 @@ Set FontSize 14
 Set Width 800
 Set Height 400
 
-Type 'sh ./script_save.sh'
+Type 'sh ./gen_wave.sh'
 Sleep 800ms
 Enter
 

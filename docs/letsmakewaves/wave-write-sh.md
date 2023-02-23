@@ -15,7 +15,7 @@ We can import/export/read table with it.
 
 For demonstration, we prepares simple shell script that prints out sine/cosine values per a second.
 
-Copy script below and save it as `script_wave.sh`
+Copy script below and save it as `gen_wave.sh`
 
 ```sh
 #!/bin/bash
@@ -42,7 +42,7 @@ done
 Let's run this script for testing.
 
 ```sh
-sh ./script_save.sh
+sh ./gen_wave.sh
 ```
 
 It periodically prints sin/cos values with name (`wave.sin`, `wave.cos`), UNIX epoch time and value per a second as below.
@@ -87,7 +87,7 @@ When we import the csv data into a table, it is important to make fields of csv 
 Now we can use the output of the script for input of `machbase-neo shell`.
 
 ```sh
-sh wave.sh | machbase-neo shell import --timeformat=s EXAMPLE
+sh gen_wave.sh | machbase-neo shell import --timeformat=s EXAMPLE
 ```
 
 {: .note-title }
