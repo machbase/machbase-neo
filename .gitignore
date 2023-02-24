@@ -8,7 +8,6 @@ Gemfile.lock
 .DS_Store
 vhs/*.gif
 vhs/*.zip
-vhs/machbase-neo
 vhs/machbase_home/
 
 examples/**/target/
