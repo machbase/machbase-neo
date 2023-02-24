@@ -4,20 +4,16 @@ Set FontSize 12
 Set Width 800
 Set Height 400
 
-Type 'sh -c "$(curl -fsSL https://neo.machbase.com/assets/install.sh)" sh v0.1.1'
+Type 'sh -c "$(curl -fsSL https://neo.machbase.com/assets/install.sh)"'
 Sleep 500ms
 Enter
-Show
 
-Sleep 
-Type `unzip machbase-neo-fog-v0.1.1-darwin-arm64.zip`
-Sleep 500ms
+Sleep 5000ms
 Enter
-Show
 
-Type `cd machbase-neo-fog-v0.1.1-darwin-arm64`
+Type `unzip -p machbase-*.zip '*machbase-neo' > machbase-neo && chmod +x machbase-neo`
 Enter
-Show
+Sleep 1000ms
 
 Type `./machbase-neo version`
 Sleep 500ms
