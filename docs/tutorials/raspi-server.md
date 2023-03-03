@@ -90,7 +90,7 @@ mkdir demo && cd demo
 - Download machbase-neo (edge edition for arm64)
 
 ```sh
-sh -c "$(curl -fsSL https://neo.machbase.com/assets/install.sh)"
+sh -c "$(curl -fsSL https://neo.machbase.com/install.sh)"
 ```
 
 - Unarchive zip file

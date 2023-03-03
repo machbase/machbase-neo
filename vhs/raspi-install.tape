@@ -16,7 +16,7 @@ Enter
 Enter
 Sleep 100ms
 
-Type 'sh -c "$(curl -fsSL https://neo.machbase.com/assets/install.sh)"'
+Type 'sh -c "$(curl -fsSL https://neo.machbase.com/install.sh)"'
 Sleep 1s
 Enter
 Sleep 2s
