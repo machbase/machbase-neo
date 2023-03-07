@@ -29,7 +29,7 @@ Find [full source code from github]({{ site.examples_url }}/go/grpc_wave/grpc_wa
 Copy source code and save it as `grpc_wave.go` or run script below in the directory.
 
 ```sh
-curl -o grpc_wave.go "https://raw.githubusercontent.com/machbase/machbase/main/examples/go/grpc_wave/grpc_wave.go"
+curl -o grpc_wave.go "https://raw.githubusercontent.com/machbase/neo-docs/main/examples/go/grpc_wave/grpc_wave.go"
 ```
 
 ### Step 4.

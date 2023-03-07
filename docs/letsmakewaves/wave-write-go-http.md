@@ -19,7 +19,7 @@ Find [full source code from github]({{ site.examples_url }}/go/http_wave/http_wa
 Copy source code and save it as `http_wave.go` or just run script below
 
 ```sh
-curl -o http_wave.go "https://raw.githubusercontent.com/machbase/machbase/main/examples/go/http_wave/http_wave.go"
+curl -o http_wave.go "https://raw.githubusercontent.com/machbase/neo-docs/main/examples/go/http_wave/http_wave.go"
 ```
 
 ### Step 3.
