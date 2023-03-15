@@ -379,5 +379,15 @@ internal class Program
             Console.WriteLine($"Elapse {elapsed_time}ms.");
         }
     }
+
+    public static class TimeUtils
+    {
+        public static long GetNanoseconds()
+        {
+            double timestamp = Stopwatch.GetTimestamp();
+            double nanoseconds = 1_000_000_000.0 * timestamp / Stopwatch.Frequency;
+            return (long)nanoseconds;
+        }
+    }
 }
 ```
