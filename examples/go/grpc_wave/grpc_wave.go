@@ -8,11 +8,7 @@ import (
 )
 
 func main() {
-	opts := []machrpc.ClientOption{
-		machrpc.QueryTimeout(5 * time.Second),
-	}
-
-	cli := machrpc.NewClient(opts...)
+	cli := machrpc.NewClient()
 	if err := cli.Connect("127.0.0.1:5655"); err != nil {
 		panic(err)
 	}
@@ -24,11 +20,11 @@ func main() {
 		delta := float64(ts.UnixMilli()%15000) / 15000
 		theta := 2 * math.Pi * delta
 		sin, cos := math.Sin(theta), math.Cos(theta)
-		if err := cli.Exec(sqlText, "wave.sin", ts, sin); err != nil {
-			panic(err)
+		if result := cli.Exec(sqlText, "wave.sin", ts, sin); result.Err() != nil {
+			panic(result.Err())
 		}
-		if err := cli.Exec(sqlText, "wave.cos", ts, cos); err != nil {
-			panic(err)
+		if result := cli.Exec(sqlText, "wave.cos", ts, cos); result.Err() != nil {
+			panic(result.Err())
 		}
 	}
 }
