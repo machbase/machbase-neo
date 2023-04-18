@@ -54,7 +54,6 @@ Assume `sin`, `cos` variables are properly initialized `float64` values.
 
 ```go
 content, _ := json.Marshal(&WriteReq{
-    Table: "EXAMPLE",
     Data: WriteReqData{
         Columns: []string{"name", "time", "value"},
         Rows: [][]any{
@@ -70,7 +69,6 @@ It will be encoded as JSON for writing API like below.
 
 ```json
 {
-    "table": "EXAMPLE",
     "data": {
         "columns":["name", "time", "value"],
         "rows": [
@@ -85,7 +83,7 @@ Send it to server via http POST request.
 
 ```go
 client := http.Client{}
-rsp, err := client.Post("http://127.0.0.1:5654/db/write", 
+rsp, err := client.Post("http://127.0.0.1:5654/db/write/EXAMPLE", 
     "application/json", bytes.NewBuffer(content))
 ```
 

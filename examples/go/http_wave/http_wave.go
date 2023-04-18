@@ -37,7 +37,7 @@ func main() {
 			},
 		})
 		rsp, err := client.Post(
-			"http://127.0.0.1:5654/db/write",
+			"http://127.0.0.1:5654/db/write/example",
 			"application/json",
 			bytes.NewBuffer(content))
 		if err != nil {
