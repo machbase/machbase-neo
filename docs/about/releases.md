@@ -26,6 +26,7 @@ The Fog edition is for desktop and server-grade machines.
 | Linux      | x64            | [machbase-neo-fog-{{ site.latest_version }}-linux-amd64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-fog-{{ site.latest_version }}-linux-amd64.zip)   |
 | macOS      | arm64          | [machbase-neo-fog-{{ site.latest_version }}-darwin-arm64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-fog-{{ site.latest_version }}-darwin-arm64.zip) |
 | macOS      | x64            | [machbase-neo-fog-{{ site.latest_version }}-darwin-amd64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-fog-{{ site.latest_version }}-darwin-amd64.zip) |
+| Windows    | x64            | [machbase-neo-fog-{{ site.latest_version }}-windows-amd64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-fog-{{ site.latest_version }}-windows-amd64.zip) |
 
 
 ### Edge Edition
