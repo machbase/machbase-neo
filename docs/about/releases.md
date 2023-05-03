@@ -37,7 +37,7 @@ The Edge edition is optimized for small machines with limited resources, such as
 |:-----------|:---------------|:----------|
 | Linux      | arm64          | [machbase-neo-edge-{{ site.latest_version }}-linux-arm64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-edge-{{ site.latest_version }}-linux-arm64.zip)   |
 | Linux      | x64            | [machbase-neo-edge-{{ site.latest_version }}-linux-amd64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-edge-{{ site.latest_version }}-linux-amd64.zip)   |
-| Linux      | armv6l, armv7l | [machbase-neo-edge-{{ site.latest_version }}-linux-arm32.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-edge-{{ site.latest_version }}-linux-arm32.zip)   |
+| Linux      | armv7l         | [machbase-neo-edge-{{ site.latest_version }}-linux-arm32.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-edge-{{ site.latest_version }}-linux-arm32.zip)   |
 | macOS      | arm64          | [machbase-neo-edge-{{ site.latest_version }}-darwin-arm64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-edge-{{ site.latest_version }}-darwin-arm64.zip) |
 | macOS      | x64            | [machbase-neo-edge-{{ site.latest_version }}-darwin-amd64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-edge-{{ site.latest_version }}-darwin-amd64.zip) |
 

@@ -39,11 +39,7 @@ Paste the script below into the shell prompt for the latest version of the recom
 sh -c "$(curl -fsSL https://neo.machbase.com/install.sh)"
 ```
 
-- [Click here]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-fog-{{ site.latest_version }}-windows-amd64.zip) to get the latest release for
-{: .d-inline-block .v-align-top}
-Windows
-{:.label .label-yellow }
-
+- [Click here]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-fog-{{ site.latest_version }}-windows-amd64.zip) to get the latest release for Windows
 
 
 ### Choose edition and version manually
