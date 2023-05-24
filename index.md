@@ -44,7 +44,8 @@ sh -c "$(curl -fsSL https://neo.machbase.com/install.sh)"
 If you are a Windows user then execute `neow` included in the Windows release.
 <!--
 the macOS user prefers to use GUI, download neow package from the [releases](./releases/#gui-for-macos) page.
--->,
+,-->
+
 Download the latest release for [Windows]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-fog-{{ site.latest_version }}-windows-amd64.zip)
 <!--
 , [macOS (Apple)]({{ site.releases_url }}/download/{{ site.latest_version }}/neow-fog-{{ site.latest_version }}-macOS-arm64.zip) and [macOS (Intel)]({{ site.releases_url }}/download/{{ site.latest_version }}/neow-fog-{{ site.latest_version }}-macOS-amd64.zip).
