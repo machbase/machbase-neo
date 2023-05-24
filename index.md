@@ -39,16 +39,27 @@ Paste the script below into the shell prompt for the latest version of the recom
 sh -c "$(curl -fsSL https://neo.machbase.com/install.sh)"
 ```
 
-- [Click here]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-fog-{{ site.latest_version }}-windows-amd64.zip) to get the latest release for Windows
+### Windows <!--GUI--> users
+
+If you are a Windows user then execute `neow` included in the Windows release.
+<!--
+the macOS user prefers to use GUI, download neow package from the [releases](./releases/#gui-for-macos) page.
+-->,
+Download the latest release for [Windows]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-fog-{{ site.latest_version }}-windows-amd64.zip)
+<!--
+, [macOS (Apple)]({{ site.releases_url }}/download/{{ site.latest_version }}/neow-fog-{{ site.latest_version }}-macOS-arm64.zip) and [macOS (Intel)]({{ site.releases_url }}/download/{{ site.latest_version }}/neow-fog-{{ site.latest_version }}-macOS-amd64.zip).
+-->
+
+![interfaces](/assets/img/neow-win.png)
 
 
 ### Choose edition and version manually
 
-Find and download file of the proper edition and platform from the [releases](./releases/) page.
+Find and download the file of the proper edition and platform from the [releases](./releases/) page.
 
 ## Tutorials
 
-[Let's make waves](./docs/letsmakewaves/00.index.md) tutorial will be a good starting point.
+[Let's make waves](./docs/letsmakewaves/00.index.md) tutorial is a good starting point.
 
 [Raspberry PI as IoT server](./docs/tutorials/raspi-server.md) shows how to install machbase-neo on Raspberry PI and utilize it as an IoT server.
 

@@ -26,7 +26,7 @@ The Fog edition is for desktop and server-grade machines.
 | Linux      | x64            | [machbase-neo-fog-{{ site.latest_version }}-linux-amd64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-fog-{{ site.latest_version }}-linux-amd64.zip)   |
 | macOS      | arm64          | [machbase-neo-fog-{{ site.latest_version }}-darwin-arm64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-fog-{{ site.latest_version }}-darwin-arm64.zip) |
 | macOS      | x64            | [machbase-neo-fog-{{ site.latest_version }}-darwin-amd64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-fog-{{ site.latest_version }}-darwin-amd64.zip) |
-| Windows    | x64            | [machbase-neo-fog-{{ site.latest_version }}-windows-amd64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-fog-{{ site.latest_version }}-windows-amd64.zip) |
+| Windows    | x64            | [machbase-neo-fog-{{ site.latest_version }}-windows-amd64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-fog-{{ site.latest_version }}-windows-amd64.zip)[^1] |
 
 
 ### Edge Edition
@@ -41,6 +41,17 @@ The Edge edition is optimized for small machines with limited resources, such as
 | macOS      | arm64          | [machbase-neo-edge-{{ site.latest_version }}-darwin-arm64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-edge-{{ site.latest_version }}-darwin-arm64.zip) |
 | macOS      | x64            | [machbase-neo-edge-{{ site.latest_version }}-darwin-amd64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-edge-{{ site.latest_version }}-darwin-amd64.zip) |
 
+<!--
+### GUI Launcher for macOS
+
+The (_experimental_) GUI releases for macOS users.
+
+| OS         | Architecture   |  Download |
+|:-----------|:---------------|:----------|
+| macOS      | Apple          | [neow-fog-{{ site.latest_version }}-darwin-arm64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/neow-fog-{{ site.latest_version }}-darwin-arm64.zip)|
+| macOS      | Intel          | [neow-fog-{{ site.latest_version }}-darwin-amd64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/neow-fog-{{ site.latest_version }}-darwin-amd64.zip)|
+-->
+
 ## What's Changed {{ site.latest_version }}
 
 [Changes](https://github.com/machbase/neo-server/releases/tag/{{ site.latest_version }})
@@ -48,3 +59,8 @@ The Edge edition is optimized for small machines with limited resources, such as
 ## Previous releases
 
 Find previously released versions in [here](https://github.com/machbase/neo-server/releases).
+
+--------------
+
+[^1]: Windows release includes both of the `machbase-neo` and `neow` (GUI frontend) executables
+{: .fs-1}
