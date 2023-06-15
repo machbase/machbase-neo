@@ -71,7 +71,7 @@ OUTPUT(
   CHART_LINE(
         xAxis(0, 'Hz'),
         yAxis(1, 'Amplitude'),
-        dataZoom('slider', 0, 30) 
+        dataZoom('slider', 0, 10) 
     )
 )
 ```
