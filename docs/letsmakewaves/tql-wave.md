@@ -7,7 +7,7 @@ order: 30
 nav_order: 10
 ---
 
-# Let's make waves with TQL
+# Let's make waves in TQL
 {: .no_toc}
 
 1. TOC
