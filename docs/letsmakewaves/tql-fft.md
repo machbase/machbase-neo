@@ -47,7 +47,7 @@ It will show "10000 rows inserted." message in the "Result" pane.
 
 ## Read data from database
 
-The code below is read the stored data from 'example' table.
+The code below reads the stored data from the 'example' table.
 
 ```js
 INPUT( QUERY('value', from('example', 'signal'), between('last-10s', 'last')) )
@@ -84,9 +84,9 @@ OUTPUT(
 
 1. `INPUT( QUERY(...))` yields records from the query result, and *tql* treats the first field as *key* and the others are *value* tuple. `{key: time, value: (value) }`
 2. `PUSHKEY('sample')` sets the constant string 'sample' as new keys for all records and "push" original key into value tuple. As result all records have same *key* `'sample'` and `(time, value)` as *value*. `{key: 'sample', value:(time, value)}`
-3. `GROUPBYKEY()` merge all records that has the same key. In this example, all query results are combined into a record that has same *key* 'sample' and value is array of tuples which formed `{key: 'sample', value:[ (time1, value1), (time2, value2], ..., (timeN, valueN) ]}`.
-4. `FFT()` applies Fast Fourier Transform on the value of the record and convert the value into array of tuple which is `{key: 'sample', value:[ (Hz1, Ampl1), (Hz2, Ampl2), ... ]}`.
-5. `FLATTEN()` reduces the dimension of value array by splitting into multiple records. As result it yields `{key:'sample', value:(Hz1, Ampl1)}`, `{key:'sample', value:{Hz2, Ampl2}}`, ...
+3. `GROUPBYKEY()` merge all records that has the same key. In this example, all query results are combined into a record that has same *key* 'sample' and value is an array of tuples which formed `{key: 'sample', value:[ (time1, value1), (time2, value2], ..., (timeN, valueN) ]}`.
+4. `FFT()` applies Fast Fourier Transform on the value of the record and convert the value into an array of tuple which is `{key: 'sample', value:[ (Hz1, Ampl1), (Hz2, Ampl2), ... ]}`.
+5. `FLATTEN()` reduces the dimension of value array by splitting into multiple records. As result it yields `{key:'sample', value:(Hz1, Ampl1)}`, `{key:'sample', value:(Hz2, Ampl2)}`, ...
 6. `POPKEY()` drops current key of record and promote the first element of value as new key. `{key:Hz1, value:(Ampl1)}`, `{key:Hz2, value:(Ampl2)}`...
 
 
@@ -118,5 +118,5 @@ OUTPUT(
 
 1. `INPUT( QUERY(...))` yields records from the query result, and *tql* treats the first field as *key* and the others are *value* tuple. `{key: time, value: (value) }`
 2. `PUSHKEY( roundTime(K, '500ms'))` sets the new key with the result of roundTime `K` by 500 miliseconds and "push" original key into value tuple. *tql* reserves capital letter `K` and `V` variables for *key* and *value* of a record. `{key: (time/500ms)*500ms, value:(time, value)}`
-3. `GROUPBYKEY()` makes records grouped in every 500ms. `{key: timeIn500ms, value:[(time1, value1), (time2, value2)...]}`
-4. `FFT()` applies Fast Fourier Transform for each record. The optional functions `minHz(0)` and `maxHz(100)` limits the scope of the output just for the better visualization.
+3. `GROUPBYKEY()` makes records grouped in every 500ms. `{key: time1In500ms, value:[(time1, value1), (time2, value2)...]}`
+4. `FFT()` applies Fast Fourier Transform for each record. The optional functions `minHz(0)` and `maxHz(100)` limits the scope of the output just for the better visualization. `{key:time1In500ms, value:[(Hz1, Ampl1), ...]}`, `{key:'time2In500ms', value:[(Hz1, Ampl1), ...]}`, ...
