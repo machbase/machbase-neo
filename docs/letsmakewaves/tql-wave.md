@@ -62,30 +62,19 @@ OUTPUT( CHART_BAR() )
 
 ## TQL as HTTP API
 
-Any *tql* script that saved as a file in '.tql' extension can be invoked via HTTP GET request. Save the example code above as 'hello.tql' then open it with your web brower as [http://127.0.0.1:5654/db/tql/hello.tql](http://127.0.0.1:5654/db/tql/hello.tql).
-
-### CSV()
-
-```js
-INPUT( QUERY('value', from('example', 'wave.sin'), between('last-3s', 'last')) )
-OUTPUT( CSV() )
-```
+Any *tql* script that saved as a file in '.tql' extension can be invoked via HTTP GET request. Save the example code above as `hello.tql` then open it with your web brower as [http://127.0.0.1:5654/db/tql/hello.tql](http://127.0.0.1:5654/db/tql/hello.tql).
 
 ### JSON()
 
 ```js
-INPUT(
-    QUERY('value', from('example', 'wave.sin'), between('last-3s', 'last'))
-)
+INPUT( QUERY('value', from('example', 'wave.sin'), between('last-3s', 'last')) )
 OUTPUT( JSON() )
 ```
 
 ### JSON() with transpose()
 
 ```js
-INPUT(
-    QUERY('value', from('example', 'wave.sin'), between('last-3s', 'last'))
-)
+INPUT( QUERY('value', from('example', 'wave.sin'), between('last-3s', 'last')) )
 OUTPUT( JSON( transpose(true) ) )
 ```
 
@@ -102,3 +91,25 @@ OUTPUT( JSON( transpose( $trans ?? false) ) )
 - [http://127.0.0.1:5654/db/tql/hello.tql?trans=true](http://127.0.0.1:5654/db/tql/hello.tql?trans=true)
 - [http://127.0.0.1:5654/db/tql/hello.tql?trans=false](http://127.0.0.1:5654/db/tql/hello.tql?trans=false)
 -->
+
+### CSV()
+
+```js
+INPUT( QUERY('value', from('example', 'wave.sin'), between('last-3s', 'last')) )
+OUTPUT( CSV() )
+```
+
+### CSV() with pandas
+
+Load CSV data from *tql* to pandas in Python.
+
+```python
+from urllib import parse
+import pandas as pd
+
+path = "http://127.0.0.1:5654/db/tql/hello.tql"
+df = pd.read_csv(path, header=None)
+df
+```
+
+![web-hello-tql-csv-pandas](/assets/img/web-hello-tql-csv-pandas.jpg)
