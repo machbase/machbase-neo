@@ -25,8 +25,7 @@ INPUT( FAKE(
   oscilator(
     freq(15, 1.0), freq(24, 1.5),
     range('now', '10s', '1ms')) 
-  )
-)
+))
 OUTPUT( CHART_SCATTER( dataZoom('slider', 95, 100)) )
 ```
 
@@ -37,7 +36,10 @@ OUTPUT( CHART_SCATTER( dataZoom('slider', 95, 100)) )
 Store the generated data into the database with the tag name 'signal'.
 
 ```js
-INPUT( FAKE( oscilator(freq(1.5, 1.0), range('now', '3s', '10ms')) ))
+INPUT( FAKE( oscilator(
+    freq(15, 1.0), freq(24, 1.5),
+    range('now', '10s', '1ms')) 
+))
 OUTPUT( INSERT( 'time', 'value', table('example'), tag('signal') ) )
 ```
 
@@ -82,10 +84,7 @@ OUTPUT(
 
 ```js
 INPUT( 
-  QUERY('value', 
-        from('example', 'signal'), 
-        between('last-10s', 'last')
-  ) 
+  QUERY( 'value', from('example', 'signal'), between('last-10s', 'last') ) 
 )
 
 PUSHKEY( roundTime(K, '500ms') )
