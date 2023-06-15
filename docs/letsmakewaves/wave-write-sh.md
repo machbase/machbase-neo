@@ -1,5 +1,5 @@
 ---
-title: Shell script for writing
+title: Write waves by shell
 parent: Let's make waves
 layout: default
 order: 30

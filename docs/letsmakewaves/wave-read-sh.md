@@ -3,7 +3,7 @@ title: Read waves by shell
 parent: Let's make waves
 layout: default
 order: 30
-nav_order: 200
+nav_order: 101
 ---
 
 # Reading data by shell
