@@ -175,11 +175,11 @@ humidity,1677646800,0.62
 Send the csv file to the `append.tql` via HTTP POST.
 
 ```sh
-curl -o - -v -X POST --data-binary @data.csv http://127.0.0.1:5654/db/tql/append.tql
+curl -o - -v --data-binary @data.csv http://127.0.0.1:5654/db/tql/append.tql
 ```
 
 ```sh
-$ curl -o - -v -X POST --data-binary @data.csv http://127.0.0.1:5654/db/tql/append.tql
+$ curl -o - -v --data-binary @data.csv http://127.0.0.1:5654/db/tql/append.tql
 > POST /db/tql/append2.tql HTTP/1.1
 > Host: 127.0.0.1:5654
 > User-Agent: curl/7.88.1
