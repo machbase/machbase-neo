@@ -92,19 +92,15 @@ INPUT( QUERY('value', from('example', 'wave.sin'), between('last-3s', 'last')) )
 OUTPUT( JSON( transpose(true) ) )
 ```
 
-<!--
 ### Query param
 
 ```js
-INPUT(
-    QUERY('value', from('example', 'wave.sin'), between('last-3s', 'last'))
-)
+INPUT( QUERY('value', from('example', 'wave.sin'), between('last-3s', 'last')) )
 OUTPUT( JSON( transpose( $trans ?? false) ) )
 ```
 
 - [http://127.0.0.1:5654/db/tql/hello.tql?trans=true](http://127.0.0.1:5654/db/tql/hello.tql?trans=true)
 - [http://127.0.0.1:5654/db/tql/hello.tql?trans=false](http://127.0.0.1:5654/db/tql/hello.tql?trans=false)
--->
 
 ### CSV()
 
