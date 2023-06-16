@@ -45,6 +45,17 @@ OUTPUT( INSERT( 'time', 'value', table('example'), tag('signal') ) )
 
 It will show "10000 rows inserted." message in the "Result" pane.
 
+For a comment, it took about *270ms* in a test machine (Apple mac mini M1), but using `APPEND()` method in the example below, took *65ms* (x4 faster).
+
+```js
+INPUT( FAKE( oscilator(
+    freq(15, 1.0), freq(24, 1.5),
+    range('now', '10s', '1ms')) 
+))
+PUSHKEY('singal')
+OUTPUT( APPEND( table('example') ) )
+```
+
 ## Read data from database
 
 The code below reads the stored data from the 'example' table.
