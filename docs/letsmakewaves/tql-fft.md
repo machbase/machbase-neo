@@ -56,6 +56,9 @@ PUSHKEY('singal')
 OUTPUT( APPEND( table('example') ) )
 ```
 
+{:.note}
+> The 'APPEND' works only when fields of input records exactly match with columns of the table in order and types.
+
 ## Read data from database
 
 The code below reads the stored data from the 'example' table.
