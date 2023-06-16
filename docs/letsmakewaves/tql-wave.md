@@ -74,7 +74,7 @@ AND time BETWEEN
 LIMIT 0, 1000000
 ```
 
-## TQL as HTTP RESTful API
+## TQL as RESTful API - HTTP GET
 
 Any *tql* script that saved as a file in '.tql' extension can be invoked via HTTP GET request. Save the example code above as `hello.tql` then open it with your web brower at [http://127.0.0.1:5654/db/tql/hello.tql](http://127.0.0.1:5654/db/tql/hello.tql) or use `curl -o - http://127.0.0.1:5654/db/tql/hello.tql` on a terminal.
 
@@ -135,3 +135,62 @@ df.plot(x='time', y='amplitude')
 ```
 
 ![web-hello-tql-csv-pandas-plot](/assets/img/web-hello-tql-csv-pandas-plot.jpg)
+
+## TQL as RESTful API - HTTP POST
+
+A *tql* that starts with `INPUT(CSV(CTX.Body...))` then ends with `OUTPUT(APPEND(...))` works as an API that ingests data.
+
+Make a new script and save it as `append.tql`.
+
+```js
+INPUT(
+    CSV(
+        CTX.Body,
+        col(0, stringType(), 'name'),
+        col(1, datetimeType('s'), 'time'),
+        col(2, doubleType(), 'value')
+    )
+)
+OUTPUT( APPEND(table('example')) )
+```
+
+{:.note}
+> The 'APPEND' works only when fields of input records exactly match with columns of the table in order and types.
+
+And make test data in CSV `data.csv`
+
+```
+barn,1677646800,0.03135
+dew_point,1677646800,24.4
+dishwasher,1677646800,3.33e-05
+fridge,1677646800,0.12415
+furnace,1677646800,0.0207
+garage_door,1677646800,0.0130833
+gen,1677646800,0.00348333
+home_office,1677646800,0.442633
+house_overall,1677646800,0.932833
+humidity,1677646800,0.62
+```
+
+Send the csv file to the `append.tql` via HTTP POST.
+
+```sh
+curl -o - -v -X POST --data-binary @data.csv http://127.0.0.1:5654/db/tql/append.tql
+```
+
+```sh
+$ curl -o - -v -X POST --data-binary @data.csv http://127.0.0.1:5654/db/tql/append.tql
+> POST /db/tql/append2.tql HTTP/1.1
+> Host: 127.0.0.1:5654
+> User-Agent: curl/7.88.1
+> Accept: */*
+> Content-Length: 283
+> Content-Type: application/x-www-form-urlencoded
+>
+< HTTP/1.1 200 OK
+< Content-Type: application/octet-stream
+< Date: Fri, 16 Jun 2023 06:15:11 GMT
+< Content-Length: 36
+<
+append 10 rows (success 10, fail 0).
+```
