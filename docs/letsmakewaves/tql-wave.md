@@ -23,7 +23,7 @@ Open a new *tql* editor on the web ui.
 Copy the code below and run it.
 
 ```js
-INPUT( FAKE( oscilator(freq(1.5, 1.0), range('now', '3s', '10ms')) ))
+INPUT( FAKE( oscillator(freq(1.5, 1.0), range('now', '3s', '10ms')) ))
 OUTPUT( CHART_LINE() )
 ```
 
@@ -34,7 +34,7 @@ OUTPUT( CHART_LINE() )
 Replace `OUTPUT( CHART_LINE() )` with `OUTPUT( INSERT() )` as the code below storing the generated data into the database.
 
 ```js
-INPUT( FAKE( oscilator(freq(1.5, 1.0), range('now', '3s', '10ms')) ))
+INPUT( FAKE( oscillator(freq(1.5, 1.0), range('now', '3s', '10ms')) ))
 OUTPUT( INSERT( 'time', 'value', table('example'), tag('wave.sin') ) )
 ```
 

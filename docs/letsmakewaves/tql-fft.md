@@ -17,12 +17,12 @@ nav_order: 11
 
 Open a new *tql* editor on the web ui and copy the code below and run it.
 
-In this example, `oscilator()` generates a composite wave of 15Hz 1.0 + 24Hz 1.5.
+In this example, `oscillator()` generates a composite wave of 15Hz 1.0 + 24Hz 1.5.
 And `CHART_SCATTER()` has `dataZoom()` option function that provides an slider under the x-Axis.
 
 ```js
 INPUT( FAKE( 
-  oscilator(
+  oscillator(
     freq(15, 1.0), freq(24, 1.5),
     range('now', '10s', '1ms')) 
 ))
@@ -36,7 +36,7 @@ OUTPUT( CHART_SCATTER( dataZoom('slider', 95, 100)) )
 Store the generated data into the database with the tag name 'signal'.
 
 ```js
-INPUT( FAKE( oscilator(
+INPUT( FAKE( oscillator(
     freq(15, 1.0), freq(24, 1.5),
     range('now', '10s', '1ms')) 
 ))
@@ -48,7 +48,7 @@ It will show "10000 rows inserted." message in the "Result" pane.
 For a comment, it took about *270ms* in a test machine (Apple mac mini M1), but using `APPEND()` method in the example below, took *65ms* (x4 faster).
 
 ```js
-INPUT( FAKE( oscilator(
+INPUT( FAKE( oscillator(
     freq(15, 1.0), freq(24, 1.5),
     range('now', '10s', '1ms')) 
 ))
