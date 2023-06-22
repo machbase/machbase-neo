@@ -2,17 +2,12 @@ package main
 
 import (
 	"fmt"
-	"time"
 
 	"github.com/machbase/neo-grpc/machrpc"
 )
 
 func main() {
-	opts := []machrpc.ClientOption{
-		machrpc.QueryTimeout(5 * time.Second),
-	}
-
-	cli := machrpc.NewClient(opts...)
+	cli := machrpc.NewClient()
 	if err := cli.Connect("127.0.0.1:5655"); err != nil {
 		panic(err)
 	}

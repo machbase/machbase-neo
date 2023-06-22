@@ -1,24 +1,22 @@
 package main
 
 import (
-	"time"
+	"fmt"
 
 	"github.com/machbase/neo-grpc/machrpc"
 )
 
 func main() {
-	opts := []machrpc.ClientOption{
-		machrpc.QueryTimeout(5 * time.Second),
-	}
-
-	cli := machrpc.NewClient(opts...)
+	cli := machrpc.NewClient()
 	if err := cli.Connect("127.0.0.1:5655"); err != nil {
 		panic(err)
 	}
 	defer cli.Disconnect()
 
 	sqlText := `drop table example`
-	if err := cli.Exec(sqlText); err != nil {
-		panic(err)
+	if result := cli.Exec(sqlText); result.Err() != nil {
+		panic(result.Err())
+	} else {
+		fmt.Println(result.Message())
 	}
 }
