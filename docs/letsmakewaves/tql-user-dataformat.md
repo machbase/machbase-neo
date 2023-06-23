@@ -25,7 +25,7 @@ Prepare test data saved in "script-data.json".
     "string": "Hello TQL?",
     "number": "123.456",
     "time": 1687405320,
-    "boolean": true,
+    "boolean": true
   },
   "array": ["elements", 234.567, 345.678, false]
 }
