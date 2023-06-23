@@ -10,10 +10,12 @@ nav_order: 12
 # User script in TQL
 {: .no_toc}
 
+<!--
 1. TOC
 {: toc }
 
 ## SCRIPT()
+-->
 
 Open a new *tql* editor on the web ui and copy the code below and run it.
 
