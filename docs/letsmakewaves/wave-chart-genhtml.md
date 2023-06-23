@@ -6,6 +6,11 @@ order: 30
 nav_order: 220
 ---
 
+{: .warning-title}
+> Deprecated
+> 
+> `/db/chart` is deprecated. Use *TQL API* instead.
+
 # Generating HTML chart
 {: .no_toc }
 
