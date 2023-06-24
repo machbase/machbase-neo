@@ -52,7 +52,7 @@ INPUT( FAKE( oscillator(
     freq(15, 1.0), freq(24, 1.5),
     range('now', '10s', '1ms')) 
 ))
-PUSHKEY('singal')
+PUSHKEY('signal')
 OUTPUT( APPEND( table('example') ) )
 ```
 
