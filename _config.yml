@@ -33,7 +33,7 @@ releases_url: https://github.com/machbase/neo-server/releases
 
 # Build settings
 #theme: just-the-docs
-remote_theme: just-the-docs/just-the-docs@v0.4.0
+remote_theme: just-the-docs/just-the-docs@v0.5.3
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -107,7 +107,7 @@ search:
 mermaid:
   # Version of mermaid library
   # Pick an available version from https://cdn.jsdelivr.net/npm/mermaid/
-  version: "9.1.6"
+  version: "10.2.3"
   # Put any additional configuration, such as setting the theme, in _includes/mermaid_config.js
   # See also docs/ui-components/code
 
