@@ -37,8 +37,8 @@ Install `Adafruit_DHT` python module for accessing sensor data.
 pip3 install Adafruit_DHT
 ```
 
-The code reads data from the GPIO 2 pin (`pinnum = 2`), which is connected to the DAT lead of the DHT11 sensor.
-It outputs the data in the form of "name, timestamp, value" every second to the standard output.
+The code reads data from the GPIO 2 pin (`pinnum = 2`), which is connected to the DATA lead of the DHT11 sensor.
+It outputs the data in the form of "name, timestamp, value" to the standard output in every second.
 To ensure that machbase-neo can handle the time with nano-second precision,
 the sample code sets the timestamp using multiplication by 1000000000.
 
@@ -96,8 +96,8 @@ sh -c "$(curl -fsSL https://neo.machbase.com/install.sh)"
 - Unarchive zip file
 
 ```sh
-$ unzip machbase-neo-edge-v{version}-linux-arm64.zip
-$ cd machbase-neo-edge-v{version}-linux-arm64
+$ unzip machbase-neo-edge-{{ site.latest_version }}-linux-arm64.zip
+$ cd machbase-neo-edge-{{ site.latest_version }}-linux-arm64
 ```
 
 - Start machbase-neo
@@ -115,8 +115,8 @@ Press `Ctrl+C` to shutdown machbase-neo.
 
 ### Bind ip address for accessing out side of Raspberry PI
 
-As machbase-neo's boot message, it is listening only localhost(127.0.0.1).
-If you are going to access data remotely (e.g via HTTP) from your laptop and other application server,
+As machbase-neo's boot message shows, it is listening only localhost(`127.0.0.1`).
+If you are going to access machbase-neo remotely (e.g via HTTP) from your laptop and other application server,
 It is required to bind host ip address with `--host <bind_ip_addr>` option.
 
 ```sh
@@ -156,7 +156,7 @@ The option `--tz local` is for displaying TIME field in local time zone instead 
 ./machbase-neo shell walk --tz local 'select * from example order by time desc'
 ```
 
-Press 'r' key to re-execute query to refresh new data.
+Press `r` key to re-execute query to refresh new data.
 
 ![walk](./img/raspi-walk.gif)
 

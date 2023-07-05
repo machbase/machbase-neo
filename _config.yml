@@ -30,6 +30,7 @@ github_username: machbase
 latest_version: v1.2.1
 examples_url: https://github.com/machbase/neo-docs/tree/main/examples
 releases_url: https://github.com/machbase/neo-server/releases
+jdbc_version: 7.5.7
 
 # Build settings
 #theme: just-the-docs

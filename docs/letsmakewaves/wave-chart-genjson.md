@@ -6,6 +6,11 @@ order: 30
 nav_order: 230
 ---
 
+{: .warning-title}
+> Deprecated
+> 
+> `chart` command and *HTTP API* `/db/chart` is deprecated. Use *TQL API* instead.
+
 # Generating JSON for Chart.js
 
 Command below generates JSON data that is compatible for [Chart.js](https://www.chartjs.org/docs/latest/){:target="_blank" rel="noopener"}
