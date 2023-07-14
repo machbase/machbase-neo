@@ -1,4 +1,4 @@
-module grpc_wave
+module grpc_query
 
 go 1.19
 

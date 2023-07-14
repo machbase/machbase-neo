@@ -3,13 +3,36 @@ package main
 import (
 	"database/sql"
 	"fmt"
+	"os"
+	"path/filepath"
 	"time"
 
-	_ "github.com/machbase/neo-grpc/driver"
+	driver "github.com/machbase/neo-grpc/driver"
 )
 
 func main() {
-	db, err := sql.Open("machbase", "127.0.0.1:5655")
+	homeDir, err := os.UserHomeDir()
+	if err != nil {
+		panic(err)
+	}
+	serverAddr := "127.0.0.1:5655"
+	serverCert := filepath.Join(homeDir, ".config", "machbase", "cert", "machbase_cert.pem")
+	// This example substitute server's key & cert for the client's key, cert.
+	// It is just for the briefness of sample code
+	// Client applicates **SHOULD** issue a certificate for each one.
+	// Please refer to the "API Authentication" section of the documents.
+	clientKey := filepath.Join(homeDir, ".config", "machbase", "cert", "machbase_key.pem")
+	clientCert := filepath.Join(homeDir, ".config", "machbase", "cert", "machbase_cert.pem")
+
+	// register machbase-neo datasource
+	driver.RegisterDataSource("neo", &driver.DataSource{
+		ServerAddr: serverAddr,
+		ServerCert: serverCert,
+		ClientKey:  clientKey,
+		ClientCert: clientCert,
+	})
+
+	db, err := sql.Open("machbase", "neo")
 	if err != nil {
 		panic(err)
 	}

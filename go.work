@@ -1,4 +1,10 @@
 go 1.19
 
+use ./examples/go/grpc_append
+use ./examples/go/grpc_cretable
+use ./examples/go/grpc_droptable
+use ./examples/go/grpc_insert
+use ./examples/go/grpc_query
+use ./examples/go/grpc_queryrow
 use ./examples/go/grpc_wave
-use ./examples/go/mqtt_query
+use ./examples/go/sql_driver
