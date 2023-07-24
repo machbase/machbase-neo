@@ -2,7 +2,6 @@ UNAMES=`uname -s`
 UNAMEP=`uname -m`
 
 VERSION="$1"
-EDITION="$2"
 
 if [ -z "$VERSION" ]; then
     VERSION=`curl -fsSL https://api.github.com/repos/machbase/neo-server/releases/latest |grep tag_name | awk '{print $2}' | tr -d '",'`
@@ -51,36 +50,9 @@ case $UNAMEP in
     ;;
 esac
 
-case $EDITION in
-    edge)
-        ;;
-    fog)
-        ;;
-    *)
-        if [ "$UNAMES" = "darwin" ]; then
-            EDITION="fog"
-        elif [ "$UNAMES" = "linux" ]; then
-            if [ "$UNAMEP" = "arm32" ]; then
-                EDITION="edge"
-            else
-                NP=`nproc`
-                if [ $NP -gt 4 ]; then
-                    EDITION="fog"
-                else
-                    EDITION="edge"
-                fi
-            fi
-            echo "Installing '$EDITION' edition, host machine has $NP processors."
-        else
-            EDITION="edge"
-            echo "Installing '$EDITION' edition by default."
-        fi
-    ;;
-esac
+# echo $UNAMES $UNAMEP $VERSION
 
-# echo $UNAMES $UNAMEP $EDITION $VERSION
-
-FNAME="machbase-neo-$EDITION-$VERSION-$UNAMES-$UNAMEP.zip"
+FNAME="machbase-neo-$VERSION-$UNAMES-$UNAMEP.zip"
 
 echo "Downloading... $FNAME"
 

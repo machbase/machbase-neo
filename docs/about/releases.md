@@ -8,38 +8,19 @@ parent: Welcome to machbase
 
 # Releases
 
-{: .note-title}
-> Edge vs. Fog
->
-> If you plan to run Machbase-neo on a small device such as Raspberry Pi, select the Edge edition.
-> For machines with larger memory and more CPU cores, such as a personal workstation or server, choose the Fog edition.
-
 ## Latest version {{ site.latest_version }}
 
-### Fog Edition
-
-The Fog edition is for desktop and server-grade machines.
+Choose the latest version for your platform.
 
 | OS         | Architecture   |  Download |
 |:-----------|:---------------|:----------|
-| Linux      | arm64          | [machbase-neo-fog-{{ site.latest_version }}-linux-arm64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-fog-{{ site.latest_version }}-linux-arm64.zip)   |
-| Linux      | x64            | [machbase-neo-fog-{{ site.latest_version }}-linux-amd64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-fog-{{ site.latest_version }}-linux-amd64.zip)   |
-| macOS      | arm64          | [machbase-neo-fog-{{ site.latest_version }}-darwin-arm64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-fog-{{ site.latest_version }}-darwin-arm64.zip) |
-| macOS      | x64            | [machbase-neo-fog-{{ site.latest_version }}-darwin-amd64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-fog-{{ site.latest_version }}-darwin-amd64.zip) |
-| Windows[^1]    | x64            | [machbase-neo-fog-{{ site.latest_version }}-windows-amd64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-fog-{{ site.latest_version }}-windows-amd64.zip)[^2] |
+| Linux      | arm64          | [machbase-neo-{{ site.latest_version }}-linux-arm64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-{{ site.latest_version }}-linux-arm64.zip)   |
+| Linux      | x64            | [machbase-neo-{{ site.latest_version }}-linux-amd64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-{{ site.latest_version }}-linux-amd64.zip)   |
+| Linux      | arm32          | [machbase-neo-{{ site.latest_version }}-linux-arm32.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-{{ site.latest_version }}-linux-arm32.zip)   |
+| macOS      | arm64          | [machbase-neo-{{ site.latest_version }}-darwin-arm64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-{{ site.latest_version }}-darwin-arm64.zip) |
+| macOS      | x64            | [machbase-neo-{{ site.latest_version }}-darwin-amd64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-{{ site.latest_version }}-darwin-amd64.zip) |
+| Windows[^1] | x64     | [machbase-neo-{{ site.latest_version }}-windows-amd64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-{{ site.latest_version }}-windows-amd64.zip)[^2] |
 
-
-### Edge Edition
-
-The Edge edition is optimized for small machines with limited resources, such as the Raspberry Pi.
-
-| OS         | Architecture   |  Download |
-|:-----------|:---------------|:----------|
-| Linux      | arm64          | [machbase-neo-edge-{{ site.latest_version }}-linux-arm64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-edge-{{ site.latest_version }}-linux-arm64.zip)   |
-| Linux      | x64            | [machbase-neo-edge-{{ site.latest_version }}-linux-amd64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-edge-{{ site.latest_version }}-linux-amd64.zip)   |
-| Linux      | armv7l         | [machbase-neo-edge-{{ site.latest_version }}-linux-arm32.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-edge-{{ site.latest_version }}-linux-arm32.zip)   |
-| macOS      | arm64          | [machbase-neo-edge-{{ site.latest_version }}-darwin-arm64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-edge-{{ site.latest_version }}-darwin-arm64.zip) |
-| macOS      | x64            | [machbase-neo-edge-{{ site.latest_version }}-darwin-amd64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/machbase-neo-edge-{{ site.latest_version }}-darwin-amd64.zip) |
 
 <!--
 ### GUI Launcher for macOS
@@ -48,8 +29,8 @@ The (_experimental_) GUI releases for macOS users.
 
 | OS         | Architecture   |  Download |
 |:-----------|:---------------|:----------|
-| macOS      | Apple          | [neow-fog-{{ site.latest_version }}-darwin-arm64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/neow-fog-{{ site.latest_version }}-darwin-arm64.zip)|
-| macOS      | Intel          | [neow-fog-{{ site.latest_version }}-darwin-amd64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/neow-fog-{{ site.latest_version }}-darwin-amd64.zip)|
+| macOS      | Apple          | [neow-{{ site.latest_version }}-darwin-arm64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/neow-{{ site.latest_version }}-darwin-arm64.zip)|
+| macOS      | Intel          | [neow-{{ site.latest_version }}-darwin-amd64.zip]({{ site.releases_url }}/download/{{ site.latest_version }}/neow-{{ site.latest_version }}-darwin-amd64.zip)|
 -->
 
 ## What's Changed {{ site.latest_version }}
@@ -59,6 +40,15 @@ The (_experimental_) GUI releases for macOS users.
 ## Previous releases
 
 Find previously released versions in [here](https://github.com/machbase/neo-server/releases).
+
+{: .note-title}
+> Edge vs. Fog in the previsous releases before v1.5.0
+>
+> If you plan to run Machbase-neo on a small device such as Raspberry Pi, select the Edge edition.
+> For machines with larger memory and more CPU cores, such as a personal workstation or server, choose the Fog edition.
+>
+> Since v1.5.0, the editions are integrated into the single "standard" edition.
+
 
 --------------
 

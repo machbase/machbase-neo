@@ -87,7 +87,7 @@ $ ssh -l pi <ip address>
 mkdir demo && cd demo
 ```
 
-- Download machbase-neo (edge edition for arm64)
+- Download machbase-neo
 
 ```sh
 sh -c "$(curl -fsSL https://neo.machbase.com/install.sh)"
@@ -96,8 +96,8 @@ sh -c "$(curl -fsSL https://neo.machbase.com/install.sh)"
 - Unarchive zip file
 
 ```sh
-$ unzip machbase-neo-edge-{{ site.latest_version }}-linux-arm64.zip
-$ cd machbase-neo-edge-{{ site.latest_version }}-linux-arm64
+$ unzip machbase-neo-{{ site.latest_version }}-linux-arm64.zip
+$ cd machbase-neo-{{ site.latest_version }}-linux-arm64
 ```
 
 - Start machbase-neo

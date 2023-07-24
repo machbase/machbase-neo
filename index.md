@@ -33,7 +33,7 @@ Machbase is the world's fastest timeseries database[^1] with a minimal footprint
 
 ### Instant download
 
-Paste the script below into the shell prompt for the latest version of the recommended edition.
+Paste the script below into the shell prompt for the latest version of the platform.
 
 ```sh
 sh -c "$(curl -fsSL https://neo.machbase.com/install.sh)"
@@ -54,9 +54,9 @@ Download the latest release for [Windows]({{ site.releases_url }}/download/{{ si
 ![interfaces](/assets/img/neow-win.png)
 
 
-### Choose edition and version manually
+### Choose the released version manually
 
-Find and download the file of the proper edition and platform from the [releases](./releases/) page.
+Find and download the file for the version and platform from the [releases](./releases/) page.
 
 ## Tutorials
 
