@@ -3,8 +3,8 @@ github.com/golang/protobuf v1.5.2 h1:ROPKBNFfQgOUMifHyP+KYbvpjbdoFNs+aK7DXlji0Tw
 github.com/golang/protobuf v1.5.2/go.mod h1:XVQd3VNwM+JqD3oG2Ue2ip4fOMUkwXdXDdiuN0vRsmY=
 github.com/google/go-cmp v0.5.5/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
 github.com/google/go-cmp v0.5.9 h1:O2Tfq5qg4qc4AmwVlvv0oLiVAGB7enBSJ2x2DqQFi38=
-github.com/machbase/neo-grpc v0.10.2-0.20230714224207-c73b01b9a78d h1:XXupsQEaQJNRVkTsj6DAXEPMshOGr9TOCIeFxEi8qRU=
-github.com/machbase/neo-grpc v0.10.2-0.20230714224207-c73b01b9a78d/go.mod h1:j+ZvMVZ/kFGFwAaWLu2w4L44OFYzGvvIuoplJAByZCg=
+github.com/machbase/neo-grpc v0.10.1 h1:3ZQCyIsshYLQXccx680vzPOumzC8nia4rV5sTRFq92M=
+github.com/machbase/neo-grpc v0.10.1/go.mod h1:j+ZvMVZ/kFGFwAaWLu2w4L44OFYzGvvIuoplJAByZCg=
 github.com/machbase/neo-spi v1.3.1-0.20230712133116-9a4a2dd7b9e4 h1:1B44O4ETPqQ2g7OR3KdngcVZU9S/IHJoEESnWM0Dmi0=
 github.com/machbase/neo-spi v1.3.1-0.20230712133116-9a4a2dd7b9e4/go.mod h1:jmzExsS84LOY0f097WhbXw1avVgl64/tHm6CdW/P+zM=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=

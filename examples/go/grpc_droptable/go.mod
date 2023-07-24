@@ -1,8 +1,8 @@
-module grpc_wave
+module grpc_droptable
 
 go 1.19
 
-require github.com/machbase/neo-grpc v0.10.2-0.20230714224207-c73b01b9a78d
+require github.com/machbase/neo-grpc v0.10.1
 
 require (
 	github.com/golang/protobuf v1.5.2 // indirect
