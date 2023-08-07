@@ -34,7 +34,7 @@ Prepare test data saved in "script-data.json".
 Copy the code below into TQL editor and save `script-post-json.tql`.
 
 ```js
-INPUT( BYTES(CTX.Body) )
+BYTES(CTX.Body)
 SCRIPT({
   json := import("json")
   ctx := import("context")
@@ -45,7 +45,7 @@ SCRIPT({
   ctx.yieldKey(obj.tag+"_1", obj.data.time*1000000000, obj.array[1])
   ctx.yieldKey(obj.tag+"_2", obj.data.time*1000000000, obj.array[2])
 })
-OUTPUT( CSV() )
+CSV()
 ```
 
 Post the test data JSON to the tql.
@@ -63,7 +63,7 @@ name-1,1687405320000000000,234.567000
 name-2,1687405320000000000,345.678000
 ```
 
-If the script ends with `OUTPUT( APPEND(...) )` or `OUTPUT( INSERT(...) )` instead of `OUTPUT( CSV() )` the final result records will be written into database.
+If the script ends with `APPEND(...)` or `INSERT(...)` instead of `CSV()` the final result records will be written into database.
 
 # Decode text
 
@@ -79,7 +79,7 @@ Make test data in 'script-post-lines.txt'.
 Copy the code below into TQL editor and save as `script-post-lines.tql`.
 ```js
 // Produce a {key:lineno, value:string} record per line
-INPUT( STRING(CTX.Body, delimiter('\n')) )
+STRING(CTX.Body, delimiter('\n'))
 SCRIPT({
   text := import("text")
   times := import("times")
@@ -98,7 +98,7 @@ SCRIPT({
     )
   }
 })
-OUTPUT( CSV() )
+CSV()
 ```
 
 Send the test data to the *tql* via HTTP POST.
@@ -115,4 +115,4 @@ text_2,1687476301286791000,33
 text_3,1687476301286853000,44
 ```
 
-If the script ends with `OUTPUT( APPEND(...) )` or `OUTPUT( INSERT(...) )` instead of `OUTPUT( CSV() )` the final result records will be written into database.
+If the script ends with `APPEND(...)` or `INSERT(...)` instead of `CSV()` the final result records will be written into database.

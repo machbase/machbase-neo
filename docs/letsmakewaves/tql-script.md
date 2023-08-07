@@ -24,7 +24,7 @@ In this example, `linspace(-4,4,100)` generates an array contains 100 elements w
 Users can takes the key and value of the records via `context.key()` and `context.value()` then yield transformed data via `context.yield()` or `context.yieldKey()`.
 
 ```js
-INPUT( FAKE(meshgrid(linspace(-4,4,100), linspace(-4,4, 100))) )
+FAKE(meshgrid(linspace(-4,4,100), linspace(-4,4, 100)))
 SCRIPT({
   math := import("math")
   // Define a custom function in the script
@@ -43,16 +43,14 @@ SCRIPT({
   //  - yeild() build and passes new value to the next step with the received key from previous step
   ctx.yieldKey(x, y, z)
 })
-OUTPUT(
-  CHART_LINE3D(
-    // chart size in HTML syntax
-    size('1000px', '600px'),
-    // width, height, depth grids in percentage
-    gridSize(100,50,100),
-    lineWidth(5), visualMap(-0.1, 1),
-    // rotation speed in degree per sec.
-    autoRotate(20)
-  )
+CHART_LINE3D(
+  // chart size in HTML syntax
+  size('1000px', '600px'),
+  // width, height, depth grids in percentage
+  gridSize(100,50,100),
+  lineWidth(5), visualMap(-0.1, 1),
+  // rotation speed in degree per sec.
+  autoRotate(20)
 )
 ```
 
