@@ -107,7 +107,7 @@ CHART_LINE(
 ```js
 QUERY( 'value', from('example', 'signal'), between('last-10s', 'last'))
 
-PUSHKEY( roundTime(K, '500ms') )
+PUSHKEY( roundTime(key(), '500ms') )
 GROUPBYKEY()
 FFT(minHz(0), maxHz(100))
 
@@ -125,6 +125,6 @@ CHART_BAR3D(
 ### How it works
 
 1. `QUERY(...)` yields records from the query result, and *tql* treats the first field as *key* and the others are *value* tuple. `{key: time, value: (value) }`
-2. `PUSHKEY( roundTime(K, '500ms'))` sets the new key with the result of roundTime `K` by 500 miliseconds and "push" original key into value tuple. *tql* reserves capital letter `K` and `V` variables for *key* and *value* of a record. `{key: (time/500ms)*500ms, value:(time, value)}`
+2. `PUSHKEY( roundTime(key(), '500ms'))` sets the new key with the result of roundTime `key()` by 500 miliseconds and "push" original key into value tuple. *tql* reserves capital letter `key()` and `value()` variables for *key* and *value* of a record. `{key: (time/500ms)*500ms, value:(time, value)}`
 3. `GROUPBYKEY()` makes records grouped in every 500ms. `{key: time1In500ms, value:[(time1, value1), (time2, value2)...]}`
 4. `FFT()` applies Fast Fourier Transform for each record. The optional functions `minHz(0)` and `maxHz(100)` limits the scope of the output just for the better visualization. `{key:time1In500ms, value:[(Hz1, Ampl1), ...]}`, `{key:'time2In500ms', value:[(Hz1, Ampl1), ...]}`, ...

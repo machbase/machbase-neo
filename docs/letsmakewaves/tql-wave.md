@@ -138,13 +138,13 @@ df.plot(x='time', y='amplitude')
 
 ## TQL as RESTful API - HTTP POST
 
-A *tql* that starts with `CSV(CTX.Body...)` then ends with `APPEND(...)` works as an API that ingests data.
+A *tql* that starts with `CSV(payload()...)` then ends with `APPEND(...)` works as an API that ingests data.
 
 Make a new script and save it as `append.tql`.
 
 ```js
 CSV(
-    CTX.Body,
+    payload(),
     col(0, stringType(), 'name'),
     col(1, datetimeType('s'), 'time'),
     col(2, doubleType(), 'value')

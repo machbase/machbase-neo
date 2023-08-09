@@ -34,7 +34,7 @@ Prepare test data saved in "script-data.json".
 Copy the code below into TQL editor and save `script-post-json.tql`.
 
 ```js
-BYTES(CTX.Body)
+BYTES(payload())
 SCRIPT({
   json := import("json")
   ctx := import("context")
@@ -79,7 +79,7 @@ Make test data in 'script-post-lines.txt'.
 Copy the code below into TQL editor and save as `script-post-lines.tql`.
 ```js
 // Produce a {key:lineno, value:string} record per line
-STRING(CTX.Body, delimiter('\n'))
+STRING(payload(), separator('\n'))
 SCRIPT({
   text := import("text")
   times := import("times")
