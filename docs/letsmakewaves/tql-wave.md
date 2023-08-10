@@ -23,19 +23,19 @@ Open a new *tql* editor on the web ui.
 Copy the code below and run it.
 
 ```js
-INPUT( FAKE( oscillator(freq(1.5, 1.0), range('now', '3s', '10ms')) ))
-OUTPUT( CHART_LINE() )
+FAKE( oscillator(freq(1.5, 1.0), range('now', '3s', '10ms')) )
+CHART_LINE()
 ```
 
 ![web-hello-tql](/assets/img/web-hello-tql.jpg)
 
 ## Store data into database
 
-Replace `OUTPUT( CHART_LINE() )` with `OUTPUT( INSERT() )` as the code below storing the generated data into the database.
+Replace `CHART_LINE()` with `INSERT()` as the code below storing the generated data into the database.
 
 ```js
-INPUT( FAKE( oscillator(freq(1.5, 1.0), range('now', '3s', '10ms')) ))
-OUTPUT( INSERT( 'time', 'value', table('example'), tag('wave.sin') ) )
+FAKE( oscillator(freq(1.5, 1.0), range('now', '3s', '10ms')) )
+INSERT( 'time', 'value', table('example'), tag('wave.sin') )
 ```
 
 ![web-hello-tql-insert](/assets/img/web-hello-tql-insert.jpg)
@@ -45,8 +45,8 @@ OUTPUT( INSERT( 'time', 'value', table('example'), tag('wave.sin') ) )
 ### Using `SQL()`
 
 ```js
-INPUT( SQL(`select time, value from example where name = 'wave.sin'`) )
-OUTPUT( CHART_SCATTER() )
+SQL(`select time, value from example where name = 'wave.sin'`)
+CHART_SCATTER()
 ```
 
 ![web-hello-tql-sql](/assets/img/web-hello-tql-sql.jpg)
@@ -54,13 +54,13 @@ OUTPUT( CHART_SCATTER() )
 ### Using `QUERY()`
 
 ```js
-INPUT( QUERY('value', from('example', 'wave.sin'), between('last-3s', 'last')) )
-OUTPUT( CHART_BAR() )
+QUERY('value', from('example', 'wave.sin'), between('last-3s', 'last'))
+CHART_BAR()
 ```
 
 ![web-hello-tql-query](/assets/img/web-hello-tql-query.jpg)
 
-The `INPUT( QUERY(...) )` function above generates a SQL statement internally like below. It just saves developer's time making a SQL query with proper time conditions.
+The `QUERY(...)` function above generates a SQL statement internally like below. It just saves developer's time making a SQL query with proper time conditions.
 
 ```sql
 SELECT
@@ -81,22 +81,22 @@ Any *tql* script that saved as a file in '.tql' extension can be invoked via HTT
 ### JSON()
 
 ```js
-INPUT( QUERY('value', from('example', 'wave.sin'), between('last-3s', 'last')) )
-OUTPUT( JSON() )
+QUERY('value', from('example', 'wave.sin'), between('last-3s', 'last'))
+JSON()
 ```
 
 ### JSON() with transpose()
 
 ```js
-INPUT( QUERY('value', from('example', 'wave.sin'), between('last-3s', 'last')) )
-OUTPUT( JSON( transpose(true) ) )
+QUERY('value', from('example', 'wave.sin'), between('last-3s', 'last'))
+JSON( transpose(true) )
 ```
 
 ### Query param
 
 ```js
-INPUT( QUERY('value', from('example', 'wave.sin'), between('last-3s', 'last')) )
-OUTPUT( JSON( transpose( $trans ?? false) ) )
+QUERY('value', from('example', 'wave.sin'), between('last-3s', 'last'))
+JSON( transpose( $trans ?? false) )
 ```
 
 - [http://127.0.0.1:5654/db/tql/hello.tql?trans=true](http://127.0.0.1:5654/db/tql/hello.tql?trans=true)
@@ -105,8 +105,8 @@ OUTPUT( JSON( transpose( $trans ?? false) ) )
 ### CSV()
 
 ```js
-INPUT( QUERY('value', from('example', 'wave.sin'), between('last-3s', 'last')) )
-OUTPUT( CSV() )
+QUERY('value', from('example', 'wave.sin'), between('last-3s', 'last'))
+CSV()
 ```
 
 ### CSV() with pandas
@@ -138,20 +138,18 @@ df.plot(x='time', y='amplitude')
 
 ## TQL as RESTful API - HTTP POST
 
-A *tql* that starts with `INPUT(CSV(CTX.Body...))` then ends with `OUTPUT(APPEND(...))` works as an API that ingests data.
+A *tql* that starts with `CSV(payload()...)` then ends with `APPEND(...)` works as an API that ingests data.
 
 Make a new script and save it as `append.tql`.
 
 ```js
-INPUT(
-    CSV(
-        CTX.Body,
-        col(0, stringType(), 'name'),
-        col(1, datetimeType('s'), 'time'),
-        col(2, doubleType(), 'value')
-    )
+CSV(
+    payload(),
+    col(0, stringType(), 'name'),
+    col(1, datetimeType('s'), 'time'),
+    col(2, doubleType(), 'value')
 )
-OUTPUT( APPEND(table('example')) )
+APPEND(table('example'))
 ```
 
 {:.note}

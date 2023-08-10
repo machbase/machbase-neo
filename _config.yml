@@ -27,14 +27,14 @@ url: "https://neo.machbase.com" # the base hostname & protocol for your site, e.
 twitter_username: machbase
 github_username: machbase
 
-latest_version: v1.5.2
+latest_version: v1.6.0
 examples_url: https://github.com/machbase/neo-docs/tree/main/examples
 releases_url: https://github.com/machbase/neo-server/releases
 jdbc_version: 7.5.7
 
 # Build settings
 #theme: just-the-docs
-remote_theme: just-the-docs/just-the-docs@v0.5.3
+remote_theme: just-the-docs/just-the-docs@v0.5.4
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
