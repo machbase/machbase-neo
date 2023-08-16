@@ -1,13 +1,13 @@
 ---
 title: Waves in TQL
-parent: Let's make waves
+parent: Tutorial Waves
 layout: default
-permalink: /docs/letsmakewaves/tql-wave/
+permalink: /docs/tutorial-waves/tql-wave/
 order: 30
 nav_order: 10
 ---
 
-# Let's make waves in TQL
+# Tutorial Waves in TQL
 {: .no_toc}
 
 1. TOC

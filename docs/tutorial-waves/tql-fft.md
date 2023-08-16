@@ -1,8 +1,8 @@
 ---
 title: FFT in TQL
-parent: Let's make waves
+parent: Tutorial Waves
 layout: default
-permalink: /docs/letsmakewaves/tql-fft/
+permalink: /docs/tutorial-waves/tql-fft/
 order: 30
 nav_order: 11
 ---

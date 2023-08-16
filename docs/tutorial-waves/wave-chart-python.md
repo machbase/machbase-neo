@@ -1,6 +1,6 @@
 ---
 title: Chart in Python
-parent: Let's make waves
+parent: Tutorial Waves
 layout: default
 order: 30
 nav_order: 230
@@ -32,7 +32,7 @@ for row in data["data"]["rows"]:
 
 plt.plot(sinTs, sinSeries, label="sin")
 plt.plot(cosTs, cosSeries, label="cos")
-plt.title("Let's make waves")
+plt.title("Tutorial Waves")
 plt.legend()
 plt.show()
 ```

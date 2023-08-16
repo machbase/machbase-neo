@@ -1,6 +1,6 @@
 ---
 title: Go HTTP for writing
-parent: Let's make waves
+parent: Tutorial Waves
 layout: default
 order: 30
 nav_order: 110

@@ -1,6 +1,6 @@
 ---
 title: Generating HTML chart
-parent: Let's make waves
+parent: Tutorial Waves
 layout: default
 order: 30
 nav_order: 220
@@ -51,7 +51,7 @@ machbase-neo shell chart \
     --count 1 \
     --output chart.html \
     --format html \
-    --title "Let's make waves" \
+    --title "Tutorial Waves" \
     EXAMPLE/wave.sin EXAMPLE/wave.cos
 ```
 

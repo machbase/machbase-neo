@@ -1,8 +1,8 @@
 ---
 title: User script in TQL
-parent: Let's make waves
+parent: Tutorial Waves
 layout: default
-permalink: /docs/letsmakewaves/tql-script/
+permalink: /docs/tutorial-waves/tql-script/
 order: 30
 nav_order: 12
 ---

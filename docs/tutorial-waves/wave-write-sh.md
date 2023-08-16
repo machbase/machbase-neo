@@ -1,6 +1,6 @@
 ---
 title: Write waves by shell
-parent: Let's make waves
+parent: Tutorial Waves
 layout: default
 order: 30
 nav_order: 100
