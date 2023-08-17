@@ -29,6 +29,27 @@ Machbase is the world's fastest timeseries database[^1] with a minimal footprint
 
 ![interfaces](/assets/img/interfaces.jpg)
 
+## API and Interfaces
+
+- [x] HTTP : Applications and Sensors read/write data via HTTP REST API
+- [x] MQTT : Sensors write data via MQTT protocol
+- [x] gRPC : The first class API for extensions
+- [x] SSH : Command line interface for human and batch process
+- [x] WEB : User interface
+
+## Bridges
+
+Integration with external systems
+
+- [x] SQLite
+- [x] PostgreSQL
+- [x] MySQL
+- [x] MS-SQL
+- [x] MQTT Broker
+- [ ] Kafka
+- [ ] NATS
+
+
 ## Download 
 
 ### Instant download
