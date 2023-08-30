@@ -19,8 +19,6 @@ permalink: /docs/tutorials/tql/tql-basic
 > CREATE TAG TABLE IF NOT EXISTS EXAMPLE (NAME VARCHAR(20) PRIMARY KEY, TIME DATETIME BASETIME, VALUE DOUBLE SUMMARIZED);
 > INSERT INTO EXAMPLE VALUES('TAG0', TO_DATE('2021-08-12'), 10);
 > INSERT INTO EXAMPLE VALUES('TAG0', TO_DATE('2021-08-13'), 11);
-> INSERT INTO EXAMPLE VALUES('TAG0', TO_DATE('2021-08-14'), 12);
-> INSERT INTO EXAMPLE VALUES('TAG0', TO_DATE('2021-08-15'), 13);
 > ```
 >
 
@@ -33,59 +31,112 @@ permalink: /docs/tutorials/tql/tql-basic
 > `SQL` 함수를 사용해서 TQL 내부에서 query를 수행할 수 있다.
 >
 > ```js
-> SQL( 'select * from example' )
+> SQL( `select * from example` )
 > ```
 
 ### CSV Format
 
 ```js
-SQL( 'select * from example' )
+SQL( `select * from example` )
 CSV()
+```
+
+`result`
+
+```
+TAG0,1628694000000000000,10
+TAG0,1628780400000000000,11
 ```
 
 ### JSON Format
 
 ```js
-SQL( 'select * from example' )
+SQL( `select * from example` )
 JSON()
+```
+
+`result`
+
+```json
+{
+  "data": {
+    "columns": [
+      "NAME",
+      "TIME",
+      "VALUE"
+    ],
+    "types": [
+      "string",
+      "datetime",
+      "double"
+    ],
+    "rows": [
+      [
+        "TAG0",
+        1628694000000000000,
+        10
+      ],
+      [
+        "TAG0",
+        1628780400000000000,
+        11
+      ]
+    ]
+  },
+  "success": true,
+  "reason": "success",
+  "elapse": "1.571444ms"
+}
 ```
 
 ### Markdown Format
 
 ```js
-SQL( 'select * from example' )
+SQL( `select * from example` )
 MARKDOWN()
 ```
 
-## TQL API
-TQL를 저장해서 HTTP 통신의 Endpoint로 사용할 수 있다.
+`result`
 
-Save this code as `output.tql`
-
-```js
-SQL( 'select * from example' )
-JSON()
 ```
-
-Open it with web browser at [http://127.0.0.1:5654/db/tql/output.tql](http://127.0.0.1:5654/db/tql/output.tql), or use *curl* command on the terminal.
+|NAME|TIME|VALUE|
+|:-----|:-----|:-----|
+|TAG0|1628694000000000000|10.000000|
+|TAG0|1628780400000000000|11.000000|
+```
 
 ## Input
 
 아래의 `Input` 함수들을 사용해서 데이터를 테이블에 입력할 수 있다.
-
-{: .note }
-> `Input` 함수를 확인하기 위해 `Fake` 함수를 사용해서 임의의 데이터를 생성한다.
->
-> ```js
-> FAKE( oscillator(freq(1.5, 1.0), range('now', '1s', '500ms')) )
-> ```
 
 ### Insert
 
 `INSERT` function stores incoming records into specified databse table by an `INSERT` statement for each record.
 
 ```js
-FAKE( oscillator(freq(1.5, 1.0), range('now', '1s', '500ms')) )
-INSERT("time", "value", table("example"), tag('temperature'))
+SQL( `select * from example` )
+INSERT("name", "time", "value", table("example"))
 ```
 
+`result`
+
+```
+"2 rows inserted."
+```
+
+### Append
+
+`APPEND` function stores incoming records into specified databse table via the `APPEND` method of machbase-neo.
+
+- `table()` table(string) specify destination table
+
+```js
+SQL( `select * from example` )
+APPEND(table('example'))
+```
+
+`result`
+
+```
+"append 2 rows (success 2, fail 0)."
+```
