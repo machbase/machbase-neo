@@ -1,11 +1,11 @@
-<!-- TODO ---
+---
 layout: default
 grand_parent: Tutorials
 parent: TQL
 title: TQL Basic
 nav_order: 00
 permalink: /docs/tutorials/tql/tql-basic
---- -->
+---
 
 # TQL Basic
 {:.no_toc}
