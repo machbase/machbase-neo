@@ -81,7 +81,7 @@ Find and download the file for the version and platform from the [releases](./re
 
 ## Tutorials
 
-[Let's make waves](./docs/letsmakewaves/00.index.md) tutorial is a good starting point.
+[Tutorial Waves](./docs/tutorial-waves/00.index.md) tutorial is a good starting point.
 
 [Raspberry PI as IoT server](./docs/tutorials/raspi-server.md) shows how to install machbase-neo on Raspberry PI and utilize it as an IoT server.
 
