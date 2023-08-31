@@ -24,7 +24,7 @@ permalink: /docs/tutorials/tql/tql-time
 
 TQL은 여러가지 `Time` 조작 함수를 제공한다. 
 
-## time
+## Time function
 
 `time` 함수는 입력된 값에 따라 Time 값을 반환한다.
 
