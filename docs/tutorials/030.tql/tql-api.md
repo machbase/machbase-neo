@@ -22,8 +22,6 @@ permalink: /docs/tutorials/tql/tql-api
 > ```
 >
 
-
-# TQL API
 TQL를 저장해서 HTTP 통신의 Endpoint로 사용할 수 있다.
 
 ## Output API
@@ -243,4 +241,68 @@ curl -X POST http://127.0.0.1:5654/db/tql/input-json.tql \
 
 ```sh
 2 rows inserted.
+```
+
+## Parameter
+
+`TQL API`를 사용할 때 parameter 값을 전달할 수 있다.
+
+### param function
+
+`param` 함수를 사용해서 parameter 값을 가져올 수 있다.
+
+Save this code as `param.tql`
+
+```js
+SQL( `select * from example where name = ?`, param('name'))
+CSV()
+```
+
+Run `curl` command for HTTP communication
+
+```sh
+$ curl http://127.0.0.1:5654/db/tql/param.tql?name=TAG0
+```
+
+`result`
+
+```sh
+TAG0,1628694000000000000,10
+TAG0,1628780400000000000,11
+```
+
+### ?? operator
+
+`param` 함수 뒤에 `??` keyword를 사용해서 default 값을 지정할 수 있다.
+
+Save this code as `param-default.tql`
+
+```js
+SQL( `select * from example limit ?`, param('limit') ?? 1)
+CSV()
+```
+
+Run `curl` command for HTTP communication
+
+```sh
+$ curl http://127.0.0.1:5654/db/tql/param-default.tql
+```
+
+`result`
+
+```sh
+TAG0,1628694000000000000,10
+```
+
+- set parameter
+
+```sh
+$ curl http://127.0.0.1:5654/db/tql/param-default.tql?limit=2
+```
+
+`result`
+
+```sh
+TAG0,1628694000000000000,10
+TAG0,1628780400000000000,11
 ```
