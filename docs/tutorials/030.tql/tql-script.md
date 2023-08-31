@@ -119,3 +119,56 @@ CSV()
 10,0,1,2,3
 11,0,1,2,3
 ```
+
+## Time
+
+TQL can be used to facilitate conversion between `Timestamp` and `Time format string`.
+
+### Timestamp to Time format string
+
+```js
+STRING(param("format_time") ?? "808210800000000000", separator('\n'))
+SCRIPT({
+    ctx := import("context")
+    times := import("times")
+    text := import("text")
+
+    epoch_txt := ctx.value()[0]
+    epoch := text.parse_int(epoch_txt, 10, 64)
+    epoch = epoch / 1000000000
+
+    t_time := times.time_format(epoch, "Mon Jan 2 15:04:05 -0700 MST 2006")
+
+    ctx.yieldKey(epoch, t_time)
+})
+CSV()
+```
+
+`result`
+```
+808210800,Sat Aug 12 16:00:00 +0900 KST 1995
+```
+
+### Time format string to Timestamp
+
+```js
+STRING(param("timestamp") ?? "Sat Aug 12 00:00:00 -0700 MST 1995", separator('\n'))
+SCRIPT({
+    ctx := import("context")
+    times := import("times")
+    text := import("text")
+
+    time_format := ctx.value()[0]
+    epoch := times.parse("Mon Jan 2 15:04:05 -0700 MST 2006", time_format)
+
+    ctx.yieldKey(epoch, time_format)
+})
+CSV()
+```
+
+`result`
+
+```
+808210800000000000,Sat Aug 12 00:00:00 -0700 MST 1995
+```
+
