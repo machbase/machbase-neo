@@ -7,7 +7,7 @@ nav_order: 06
 permalink: /docs/tutorials/tql/tql-script
 ---
 
-# TQL Map
+# TQL Script
 {:.no_toc}
 
 1. TOC
@@ -29,7 +29,26 @@ Supporting script language
 
 *Syntax*: `SCRIPT({ ... script code... })`
 
-## Insert
+## Context
 
+Returns context object of the script runtime.
 
+### yieldKey
 
+인자로 들어온 데이터를 Output stream으로 전달한다.
+
+```js
+SCRIPT({
+    ctx := import("context")
+    ctx.yieldKey(0, 1, 2, 3)
+    ctx.yieldKey(1, 2, 3, 4)
+})
+CSV()
+```
+
+`result`
+
+```
+0,1,2,3
+1,2,3,4
+```
