@@ -178,7 +178,8 @@ CSV()
 `result`
 
 ```
-not yet
+TAG0,10
+TAG1,11
 ```
 
 ## FFT(Fast Fourier Transform)
