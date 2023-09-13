@@ -204,12 +204,9 @@ APPEND( table('example') )
 ```js
 SQL(`select time, value from example where name = 'signal'`)
 
-PUSHKEY('sample')
+MAPKEY('sample')
 GROUPBYKEY()
 FFT()
-FLATTEN()
-POPKEY()
-
 CHART_LINE(
       xAxis(0, 'Hz'),
       yAxis(1, 'Amplitude'),
