@@ -187,7 +187,7 @@ SCRIPT({
   obj := json.decode(val[0])
 
   for i := 0; i < len(obj.data.rows); i++ {
-    ctx.yieldKey(obj.data.rows[i][0], obj.data.rows[i][1], obj.data.rows[i][2])
+    ctx.yield(obj.data.rows[i][0], obj.data.rows[i][1], obj.data.rows[i][2])
   }
 })
 INSERT("name", "time", "value", table("example"))

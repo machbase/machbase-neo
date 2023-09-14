@@ -35,7 +35,7 @@ Supporting script language
 
 Returns context object of the script runtime.
 
-### yieldKey
+### yieldKey, yield
 
 인자로 들어온 데이터를 Out stream으로 전달한다.
 
@@ -44,8 +44,8 @@ Returns context object of the script runtime.
 ```js
 SCRIPT({
     ctx := import("context")
-    ctx.yieldKey(0, 1, 2, 3)
-    ctx.yieldKey(1, 2, 3, 4)
+    ctx.yield(0, 1, 2, 3)
+    ctx.yield(1, 2, 3, 4)
 })
 CSV()
 ```
@@ -62,8 +62,8 @@ CSV()
 ```js
 SCRIPT({
     ctx := import("context")
-    ctx.yieldKey("tag0", 100, 10)
-    ctx.yieldKey("tag0", 111, 11)
+    ctx.yield("tag0", 100, 10)
+    ctx.yield("tag0", 111, 11)
 })
 APPEND(table('example'))
 ```
@@ -108,7 +108,7 @@ For example, If the current value is `[0, true, "hello", "world"]`
 SQL(`select * from example`)
 SCRIPT({
     ctx := import("context")
-    ctx.yieldKey(ctx.value(1), 0, 1, 2, 3)
+    ctx.yield(ctx.value(1), 0, 1, 2, 3)
 })
 CSV()
 ```
@@ -139,7 +139,7 @@ SCRIPT({
 
     t_time := times.time_format(epoch, "Mon Jan 2 15:04:05 -0700 MST 2006")
 
-    ctx.yieldKey(epoch, t_time)
+    ctx.yield(epoch, t_time)
 })
 CSV()
 ```
@@ -161,7 +161,7 @@ SCRIPT({
     time_format := ctx.value()[0]
     epoch := times.parse("Mon Jan 2 15:04:05 -0700 MST 2006", time_format)
 
-    ctx.yieldKey(epoch, time_format)
+    ctx.yield(epoch, time_format)
 })
 CSV()
 ```
