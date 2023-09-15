@@ -22,7 +22,7 @@ permalink: /docs/tutorials/tql/tql-api
 > ```
 >
 
-TQL를 저장해서 HTTP 통신의 Endpoint로 사용할 수 있다.
+Use TQL file as the endpoint address of HTTP.
 
 ## Output API
 
@@ -176,7 +176,7 @@ append 2 rows (success 2, fail 0).
 
 ### JSON Format
 
-JSON Format의 경우에는 `TQL Script` 를 사용해서 데이터를 정제해야한다.
+Use `SCRIPT()` function to parse a custom format JSON.
 
 ```js
 BYTES(payload())
@@ -193,7 +193,7 @@ SCRIPT({
 INSERT("name", "time", "value", table("example"))
 ```
 
-`APPEND` 함수로도 입력 가능하다.
+The `APPEND` Function can replace `INSERT()`.
 
 Save this text as `input-json.json`
 
@@ -245,11 +245,11 @@ curl -X POST http://127.0.0.1:5654/db/tql/input-json.tql \
 
 ## Parameter
 
-`TQL API`를 사용할 때 parameter 값을 전달할 수 있다.
+HTTP query params can be pass to the `TQL API`.
 
 ### param function
 
-`param` 함수를 사용해서 parameter 값을 가져올 수 있다.
+Use `param()` function to retrieve the query param.
 
 Save this code as `param.tql`
 
@@ -273,7 +273,7 @@ TAG0,1628780400000000000,11
 
 ### ?? operator
 
-`param` 함수 뒤에 `??` keyword를 사용해서 default 값을 지정할 수 있다.
+It returns the left hand operand if it is not NULL, otherwise it returns right hand operand instead.
 
 Save this code as `param-default.tql`
 

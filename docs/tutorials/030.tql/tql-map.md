@@ -26,7 +26,7 @@ permalink: /docs/tutorials/tql/tql-map
 > ```
 >
 
-TQL 에서는 여러가지 `Map` 함수를 지원한다.
+TQL supports serveral `Map` functions.
 
 ## TAKE
 

@@ -37,7 +37,7 @@ Returns context object of the script runtime.
 
 ### yieldKey, yield
 
-인자로 들어온 데이터를 Out stream으로 전달한다.
+Pass the incoming arguments to the next function.
 
 #### Output CSV
 

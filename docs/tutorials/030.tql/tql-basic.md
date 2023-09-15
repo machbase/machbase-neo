@@ -24,15 +24,7 @@ permalink: /docs/tutorials/tql/tql-basic
 
 ## Output
 
-아래의 `Output` 함수들을 사용해서 출력 데이터를 원하는 형식으로 출력할 수 있다.
-
-{: .note }
-> `Output` 함수를 확인하기 위해 Source Table로 부터 데이터를 추출하도록 한다. <br/>
-> `SQL` 함수를 사용해서 TQL 내부에서 query를 수행할 수 있다.
->
-> ```js
-> SQL( `select * from example` )
-> ```
+TQL provides multiple types of output functions.
 
 ### CSV Format
 
@@ -105,9 +97,9 @@ MARKDOWN()
 |TAG0|1628780400000000000|11.000000|
 ```
 
-## Input
+## Database Sink
 
-아래의 `Input` 함수들을 사용해서 데이터를 테이블에 입력할 수 있다.
+TQL provides `INSERT()` and `APPEND()` function to write data into the database.
 
 ### Insert
 

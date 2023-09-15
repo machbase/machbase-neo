@@ -21,16 +21,13 @@ permalink: /docs/tutorials/tql/tql-time
 > INSERT INTO EXAMPLE VALUES('TAG0', TO_DATE('2021-08-13 12:00:00 123:456:789'), 11);
 > ```
 
-
-TQL은 여러가지 `Time` 조작 함수를 제공한다. 
+TQL supports serveral `Time` manipulation functions.
 
 ## Time function
 
-`time` 함수는 입력된 값에 따라 Time 값을 반환한다.
-
 ### Now
 
-`now` 인자를 주면 현재 시간을 반환한다.
+`time("now")` returns the current time.
 
 ```js
 SQL(`select to_char(time), value from example where time < ?`, time('now'))
@@ -46,7 +43,7 @@ CSV()
 
 ### Timestamp
 
-`timestamp` 인자를 주면 해당 timestamp에 맞는 time 값을 반환한다. 
+`time(epoch)`  returns time that reprents in UNIX epoch in nano-seconds.
 
 ```js
 SQL(`select to_char(time), value from example where time = ?`, time(1628737200123456789))
@@ -55,7 +52,7 @@ CSV()
 
 ## Format
 
-`Time` 값이 출력될 때 출력 형식을 지정할 수 있다. 
+It specifies how to represents time in output.
 
 ### None
 
@@ -157,7 +154,7 @@ CSV(timeformat('RFC3339'))
 
 ## Timezone
 
-`tz` 함수를 사용해서 Timezone을 설정할 수 있다.
+The `tz` function specifies time zone.
 
 ### Local
 

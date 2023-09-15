@@ -39,7 +39,7 @@ CSV()
 
 ## Chart
 
-`Chart` 함수를 사용해서 `chart http format`으로 결과를 출력할 수 있다.
+TQL supports serveral types of chart output.
 
 ### Line Chart
 
